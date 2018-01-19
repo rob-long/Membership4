@@ -1,0 +1,62 @@
+
+.event h1 {
+    color:brown;
+    border-bottom:1px dotted grey;
+    margin-bottom:0px;
+}
+
+p.eventDate {
+    font-size:125%;
+}
+
+/* month view */
+
+table.calendarMonth {
+   border-collapse:collapse; 
+}
+table.calendarMonth caption {
+  font-size:24pt;
+  padding-bottom:10px;
+  text-align:center;
+}
+table.calendarMonth td {
+   margin:0px; 
+   padding:5px;
+   border:1px #ddd solid;
+   width:100px;
+   height:80px;
+   vertical-align:top;
+   font-size:80%;
+   background-color:white;
+}
+table.calendarMonth th {
+   margin:0px; 
+   padding:5px;
+   border:1px #ddd solid;
+   font-size:80%;
+   background-color:#ccc;
+}
+.calendarNextMonth,.calendarPrevMonth {
+    font-size:small;
+    position:relative;
+    top:13px;
+}
+.calendarNextMonth {
+    float:right;
+}
+.calendarPrevMonth {
+    float:left;
+}
+
+table.eventSchedule {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+table.eventSchedule caption {
+    text-align:left;
+    font-weight:bold;
+    font-size:125%;
+}
+table.eventSchedule td {
+    padding-right:15px;
+}

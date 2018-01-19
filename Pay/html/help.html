@@ -1,0 +1,402 @@
+<h1>Payments</h1>
+
+<p>The Payments module provides a general-purpose interface to your
+e-commerce system.  It tracks your accounts (customers), receivables
+(invoices), and payments (both e-commerce and off-line).</p>
+
+<p><a href="#refunds">Click here for instructions on cancellations and refunds.</a></p>
+
+<h2>Terms</h2>
+
+<dl>
+<dt>Account</dt>
+<dd>An account is a customer, person, or organization with which you
+have a business relationship.  The account <b>balance</b> is the difference 
+between the receivable totals and the payments on the account.
+<b>Accounts receivable</b> are accounts with money owed to you; 
+<b>accounts payable</b> are accounts in which you owe money to
+the account holder.
+</dd>
+<dt>Accounting Code</dt>
+<dd>An accounting code is a way of classifying individual receivable items
+to allow for more filtering in reports, or for calculation of specialized
+surcharges such as sales taxes.</dd>
+<dt>Payment</dt>
+<dd>A payment is a record that an amount was received from an account.
+A payment is associated with an account, but can also be associated with a
+particular receivable if you want to track whether particular items are
+paid for, rather than just the account as a whole.</dd>
+<dt>Receipt</dt>
+<dd>A receipt is basically the same as a receivable, below.  Essentially,
+a receivable becomes a receipt once it is paid.</dd>
+<dt>Receivable (or Invoice)</dt>
+<dd>A receivable is a statement of an amount owing from an account; it
+consists of one more more line items that are totaled into the total
+amount due.  The system also supports <b>payables</b>, which are just
+like receivables, but in the opposite sense: a payable describes an
+amount owing <u>to</u> the account holder, rather than from. Payables usually
+represent refunds.</dd>
+<dt>Receivable Item</dt>
+<dd>A receivable item is a single line-item on a receivable.  It
+provides more information on the details of the purchase.</dd>
+</dl>
+
+<h3>Receivable Status</h3>
+
+<p>The only important receivable status is <b>active</b>. All
+receivables that should be considered for accounting purposes should
+be marked as active.</p>
+
+<p>All other receivables are ignored by the accounting system, and can
+be considered to be archived for different reasons:</p>
+
+<ul>
+<li><b>inactive</b> - these are incomplete receivables for sales that 
+were never closed. For example, if a user starts filling a shopping cart, but
+never check out, the cart contents will show up as an inactive 
+receivable.</li>
+<li><b>processing</b> - these receivables were sent to an e-commerce payment
+gateway, but notification has not been heard back.  This can happen because
+the customer abandoned their payment, or was declined.  However,
+it can also happen if the browser session was closed before the payment
+gateway replied to the website with notification of successful payment, or
+if the user is still in the middle of their purchase.</li>
+<li><b>canceled</b> - these receivables have been manually canceled or reversed,
+from their previous status of processing or active.</li>
+<li><b>advisory</b> - these are re-issued invoices that duplicate accounting
+information that is already in the system.  For example, say there is a 
+balance owing on an account, so you issue a new invoice demanding payment.
+Because the invoiced amount is already in the accounting system on the 
+original invoice, you don't want to count it twice, so you make the new 
+invoice advisory.</li>
+</ul>
+
+<h2>Finding Invoices</h2>
+
+<p>You have several ways to query for invoices in the system:</p>
+
+<ol>
+<li>search for recent invoices</li>
+<li>search for invoices in a date range</li>
+<li>look up a particular invoice or receipt number</li>
+<li>search for account names</li>
+<li>show all accounts payable/receivable</li>
+</ol>
+
+<p>When searching for invoices in a time span, you can also specify
+the receivable status. For example, to investigate purchases that were
+lost at the payment gateway, search for "processing" invoices.</p>
+
+<p>Search results are displayed under different tabs.  Not all tabs
+will be available in every case.  If multiple tabs are available, you
+can use them to quickly switch between different views.  For instance,
+if viewing an invoice, you can switch to the account statement, or to
+a list of payments against that invoice.</p>
+
+<h3>Account Tab</h3>
+
+<p>The account statement is a summary of the account, listing all
+active receivables and all completed payments, along with the balance
+owing. The account statement only includes those items that affect the
+account balance.  Non-active receivables, and invalid payments are not
+shown by default, but will be included if you select "show all
+transactions".</p>
+
+<p>Use the toolbar buttons to narrow the date range of transactions,
+show invalid transactions, update account info, email or print the
+account statement.</p>
+
+<p>(If an account search has turned up multiple matching accounts, you 
+may have to select one first.)</p>
+
+<h3>Invoice Tab</h3>
+
+<p>The invoice tab displays the selected receivable (or a list of
+receivables to choose from, if one has not been selected).  It also
+summarizes any payments that have been made against the selected
+receivable.</p>
+
+<p>You have a number of tools for revising or displaying the invoice:</p>
+
+<ul>
+
+<li> Manage invoice - you can change the invoice status, and add payments here.</li>
+
+<li> <a href='#refunds'>Cancellations/Refunds</a> - you can reverse sales here.</li>
+
+<li> Printer-friendly - display the invoice in a form that can be mailed
+to the customer.</li>
+
+<li> Email - email the invoice (as an invoice or receipt, depending on
+payment status) to the customer. You will be able to customize the
+message to the customer.</li>
+
+<li> Statement of Sale - display the invoice as a sales report,
+including additional details such as the buyer information, payment
+summary, and information about order fulfillment.</li>
+
+</ul>
+
+<h3>Payments Tab</h3>
+
+<p>Payments on the account or receivable are listed here.  Click the
+invoice number to jump to the recievable view.  Click the payment status
+to edit that payment.  Click "+Add payment" to add a new payment to
+the account.</p>
+
+<p><strong>Refunds should be entered as negative payments.</strong></p>
+
+<p>If you add a payment on the account, you will get a form to provide
+the following information:</p>
+
+<ul>
+<li>amount - note that you can enter negative amounts to reverse 
+previous payments, or apply credits to the account.</li>
+<li>method - how the payment was made</li>
+<li>status - the state of the payment.  For good payments, the status 
+should be "paid".  To cancel a previous payment, set its status to 
+"canceled".  To mark a payment as tentatively received (eg. a cheque
+that has not been cleared), use "received".  The status of "suspicious" 
+is normally used to flag automatic e-commerce payments that could not
+be validated through the gateway.  These should be checked, and then
+updated to "paid" or "canceled".</li>
+<li>invoice - a payment can optionally be tied directly to an invoice 
+so that you can quickly tell whether a particular receivable was paid.
+This is optional; all payments are recorded against the account in 
+any case.</li>
+<li>note - it is often useful to include notes for tracking or auditing 
+purposes</li>
+<li>post-processing - check this if you want your system to perform any
+extra automatic processing functions that normally occur following a 
+successful payment.  (For example, email notifications, activations, etc.) 
+Post-processing is only performed if it is a good payment (status paid)
+that is tied to a specific invoice.</li>
+</ul>
+
+<p>You will get the same form if editing an existing payment.
+However, it will not let you edit the payment amount.  This is to
+ensure that the history of payment activity remains clear.</p>
+
+<a name="refunds"></a>
+<h2>Cancellation/Refund Function</h2>
+
+<p>Many cancellations and refunds can be dealt with using the
+Cancellation/Refund function. When viewing an invoice, click the
+"Cancellation/Refund" button to launch a tool that gives you various
+options for reversing a sale in one step. This includes convenient
+settings to cancel and void sales, as well as cancel or refund
+payments.</p>
+
+<ul>
+
+<li> <p><b>Cancel a sale</b> means a sale went through, but you simply
+want to undo it, and remove it from reports and statements. This is a
+simple way of quickly reversing a sale. The canceled sale is not
+deleted, and remains archived in the the system for auditing purposes,
+but does not have any effect on the account balance. Any payments that
+were received should also be refunded.</p></li>
+
+<li> <p><b>Void a sale</b> means the sale <em>never</em> went through,
+and should not appear in reports and statements. Use this to get rid
+of sales that were erroneously recorded. (They will remain archived 
+in the system.) This has the same effect as cancelling a sale, but 
+it is recorded differently so that you can tell the difference later.
+If payments were received, those should also be undone--but if payments
+were received, then cancelling the sale is probably a better choice to 
+keep the sales history clear.</p></li>
+
+<li> <p><b>Enter a refund</b> means a sale was completed, but then at
+a later time you refunded all or part of it. Both the original sale
+and the refund will be recorded separately in reports and statements,
+which gives a more visible accounting history.</p>
+
+<p>Partial refunds can be done by selecting particular line items on
+the invoice to refund. (Leave them all checked if you are refunding
+the entire sale.) If you are only refunding part of the sale, then be
+sure to select any taxes or other surcharges that relate to the items
+that you are refunding.</p>
+
+<p>Refunds will generate a new invoice describing the refund; this
+invoice is payable to the customer, not to you. Both will appear in
+reports and statements, effectively cancelling each other out. It will
+also generate a new refund payment in the amount of the refund
+invoice.</p>
+</li>
+
+<li> <p><b>Do nothing</b> means leave the sale as-is. Use this option
+if you are only refunding or canceling a payment, but the sale still 
+stands.</p></li>
+
+</ul>
+
+<p>In all but the refund case, you should also select how the payments
+on the invoice should be handled. There are a few cases:</p>
+
+<ol>
+
+<li>A payment was received, but was fully refunded. Select "fully
+refunded", and a reverse-payment will be recorded in the system to
+cancel out the original payment.</li>
+
+<li>Payment was <em>not</em> received. Equivalently, multiple payments
+were recorded, but only one of them is real, and the others were
+errors. In this case select "canceled/not received/error", and the
+given payments will be marked as invalid. (They are not deleted, just
+removed from the reports.)</li>
+
+<li>A partial refund was issued; in this case, do not modify the
+payments here. Use the refund function instead.</li>
+
+</ol>
+
+<p>In the refund case, a refund "payment" will automatically be
+generated in the amount of the refunded goods. This is the amount
+that should be returned to the buyer.</p>
+
+<h2>Manual Cancellations and Refunds</h2>
+
+<p>You can manually make corrections to your sales data by doing the
+following:</p>
+
+<ul>
+<li> Changing the status of invoices. Only "active" invoices are used
+in accounting reports. Change to "canceled" to cancel a sale and
+remove it from reports.</li>
+<li> Changing the status of payments. Only "paid" payments are used
+in accounting reports. Click on the payment status to change a payment to
+"canceled". It is a good idea to include a short note explaining your 
+changes.</li>
+<li> Adding refunds. Manually add a new payment with a negative amount to 
+record a refund. This will effectively balance the original payment,
+but both will be visible in reports.</li>
+<li> In special cases you may need to add new invoices to the system
+to describe special refunds, discounts, or other unusual situations.
+Use the POS (Point-of-Sale) module to create these invoices.</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+
+<p>Here are some common cases, and suggestions for how to deal with them.</p>
+
+<h3>Refunded purchase</h3>
+
+<ol>
+
+<li> To quickly reverse the entire sale, use the "Cancellation/Refund"
+button under the invoice tab. Select "Cancel the sale", and "fully
+refund" the payment.</li>
+
+<li> To get a more detailed accounting history, choose "Refund the sale" 
+instead. This allows you to optionally refund particular line items.
+A refund payment will automatically be generated in the amount of the
+refunded items.</li>
+
+</ol>
+
+<h3>Too many payments</h3>
+
+<p>Sometimes, the sale itself was good, but too many payments were
+recorded.</p>
+
+<p>If the extra payments were recorded in error (ie. no extra money
+was actually collected), then cancel the spurious payments one of these ways:</p>
+
+<ol>
+
+<li>From the payments tab, click on the status of the bad payments 
+to revise those payments. Change their status to "canceled" and add an
+explanatory note.</li>
+
+<li>From the refund tool, leave the sale as-is, and mark the problem payments
+as canceled.</li>
+
+</ol>
+
+<p>If the extra payments were actually received (ie. the customer accidentally paid several times) then refund the extra payments one of these ways:</p>
+
+<ol>
+
+<li>From the payments tab, click on "add new payment" and
+add <strong>negative</strong> payments to reflect the refunds.</li>
+
+<li>From the refund tool, leave the sale as-is, and mark the problem payments
+as fully refunded.</li>
+
+</ol>
+
+<h3>False or failed purchase</h3>
+
+<p>If a sale was recorded, but did not actually happen, then you
+should cancel the purchase so that it does not show up as an account
+receivable. From the manage invoice screen, set the invoice status to
+one of:</p>
+
+<ul>
+
+<li> <strong>inactive</strong> - this indicates that the sale was
+never actually made. Use this if the sale was an error.</li>
+
+<li> <strong>canceled</strong> - this indicates that the customer
+changed their mind. Use this if the customer never got around to
+actually paying.</li>
+
+</ul>
+
+<h3>Bad payment</h3>
+
+<p>Sometimes you will record a payment, but then have to undo that
+payment later. (For example, an NSF cheque/check.) Do one of the following:</p>
+
+<ol>
+
+<li>From the payments tab, click on the status of the bad payments 
+to revise those payments. Change their status to "canceled" and add an
+explanatory note.</li>
+
+<li>From the refund tool, leave the sale as-is, and mark the problem payments
+as canceled.</li>
+
+</ol>
+
+<p>These will leave the sale as open, meaning you are expecting
+another payment to settle the account.</p>
+
+<h3>Payment amount is wrong</h3>
+
+<p>You entered a payment manually into the system, but got the amount
+wrong. The system does not let you edit the payment amounts, because
+that would make it too easy to mess up your balances.</p>
+
+<p>From the payments tab, click on the status of the bad payments 
+to revise the payments. Change the bad payment to "canceled" and add an
+explanatory note. Then add a new payment with the correct amount.</p>
+
+<h3>Payment not applied to an invoice</h3>
+
+<p>You entered a payment manually into the system, but didn't tag it
+explicitly with the invoice number, so the system does not know that 
+that particular invoice is paid.</p>
+
+<p>From the payments tab, click on the status of the payment 
+to revise it. Change the invoice number in the payment details.</p>
+
+<h3>Customer Credit</h3>
+
+<p>A purchase was made, but rather than collect the complete amount,
+you want to credit the customer for all or part of the balance.</p>
+
+<p>From the invoice tab, add a payment on the invoice in the amount
+being credited. Set the payment type to "other", and add an
+explanatory note.</p>
+
+<h3>Changed your mind on the price</h3>
+
+<p>A purchase was made and payment received, but the invoice total
+is incorrect and you want to change it to say something else.</p>
+
+<p><strong>Editing completed purchases can mess up your accounting!
+This is a dangerous practice.</strong> It would be better to cancel/refund 
+the sale and start over.</p>
+
+<p>If you want to edit the sale anyway, then use the <strong>Point of
+Sale (POS)</strong> module to compose and edit invoices.</p>

@@ -1,0 +1,66 @@
+@import url(../Comments/Comments.css);
+
+div.article {
+    padding-bottom:10px;
+}
+div.article img { 
+    margin-top:10px;
+    margin-bottom:10px;
+}
+div.ImageCaption {
+    color:grey;
+    font-style:italic;
+}
+.articleTitle {
+    color:brown;
+    border-bottom:1px dotted grey;
+    margin-bottom:0px;
+}
+.articleAbout {
+    color:grey;
+    font-style:italic;
+    font-size:80%;
+    text-align:right;
+    padding-top:2px;
+    padding-bottom:5px;
+}
+p.articleLink div.articleAbout {
+    text-align:left;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+div.articleTools {
+    margin-top:15px;
+    padding:0px;
+    width:100%;
+}
+.articleStatus {
+    color:grey;
+    font-style:italic;
+    float:right;
+}
+
+/* Images */
+
+.article .Image {
+    float:right;
+}
+
+/* Tags */
+
+.Tags {
+    margin-top:10px;
+    font-size:80%;
+    color: grey;
+}
+a.tagLink {
+    font-style:italic;
+    color: red;
+}
+
+/* Comments */
+
+.articleTool .commentTools {
+    border:none;
+    background-color:inherit;
+}

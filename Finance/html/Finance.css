@@ -1,0 +1,14 @@
+/* figures */
+
+div.figure {
+    margin:15px;
+    display:inline-block;
+}
+div.figure img {
+    border:1px solid #ccc;
+    padding:15px;
+}
+div.figure .caption {
+    text-align:center;
+}
+

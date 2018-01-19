@@ -1,0 +1,7 @@
+type	tag	regexp
+variable_name	text	[a-zA-Z]\w*
+list:qa_form_status	select	active|inactive
+list:qa_form_type	radio	registration|other
+list:qa_format	select	short text|long text|select|multiselect|radio|radio+other|checkbox|checklist|checklist+other|password|hidden|label|preformatted|file
+set:qa_flags	checkbox	required|placeholder|show to admins only
+set:qa_form_flags	checkbox	members-only|confirmation screen|captcha|robot counter-measures|single submission only|prepopulate with member data

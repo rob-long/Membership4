@@ -1,0 +1,164 @@
+<h1>Financial Reports</h1>
+
+<p>The Financial Reports module allows you to generate summary reports of 
+your e-commerce activity. This gives you a high-level view of your website's
+e-commerce activity. To view specific accounts, invoices, or payments, use
+the Payments module instead.</p>
+
+<h2>Terms</h2>
+
+<dl>
+<dt>Account</dt>
+<dd>An account is a customer, person, or organization with which you
+have a business relationship.  The account <b>balance</b> is the difference 
+between the receivable totals and the payments on the account.
+<b>Accounts receivable</b> are accounts with money owed to you; 
+<b>accounts payable</b> are accounts in which you owe money to
+the account holder.
+</dd>
+<dt>Accounting Code</dt>
+<dd>An accounting code is a way of classifying individual receivable items
+to allow for more filtering in reports, or for calculation of specialized
+surcharges such as sales taxes.</dd>
+<dt>Payment</dt>
+<dd>A payment is a record that an amount was received from an account.
+A payment is associated with an account, but can also be associated with a
+particular receivable if you want to track whether particular items are
+paid for, rather than just the account as a whole.</dd>
+<dt>Receipt</dt>
+<dd>A receipt is basically the same as a receivable, below.  Essentially,
+a receivable becomes a receipt once it is paid.</dd>
+<dt>Receivable (or Invoice)</dt>
+<dd>A receivable is a statement of an amount owing from an account; it
+consists of one more more line items that are totaled into the total
+amount due.  The system also supports <b>payables</b>, which are just
+like receivables, but in the opposite sense: a payable describes an
+amount owing <u>to</u> the account holder, rather than from.</dd>
+<dt>Receivable Item</dt>
+<dd>A receivable item is a single line-item on a receivable.  It
+provides more information on the details of the purchase.</dd>
+</dl>
+
+<h3>Receivable Status</h3>
+
+<p>The only important receivable status is <b>active</b>. All
+receivables that should be considered for accounting purposes should
+be marked as active.</p>
+
+<p>All other receivables are ignored by the accounting system, and can
+be considered to be archived for different reasons:</p>
+
+<ul>
+<li><b>inactive</b> - these are incomplete receivables for sales that 
+were never closed. For example, if a user starts filling a shopping cart, but
+never check out, the cart contents will show up as an inactive 
+receivable.</li>
+<li><b>processing</b> - these receivables were sent to an e-commerce payment
+gateway, but notification has not been heard back.  This can happen because
+the customer abandoned their payment, or was declined.  However,
+it can also happen if the browser session was closed before the payment
+gateway replied to the website with notification of successful payment, or
+if the user is still in the middle of their purchase.</li>
+<li><b>canceled</b> - these receivables have been manually marked as bad,
+from their previous status of processing or active.</li>
+<li><b>advisory</b> - these are re-issued invoices that duplicate accounting
+information that is already in the system.  For example, say there is a 
+balance owing on an account, so you issue a new invoice demanding payment.
+Because the invoiced amount is already in the accounting system on the 
+original invoice, you don't want to count it twice, so you make the new 
+invoice advisory.</li>
+</ul>
+
+<h2>Finding Invoices</h2>
+
+<p>You have several ways to query for invoices in the system:</p>
+
+<ol>
+<li>search for recent invoices</li>
+<li>search for invoices in a date range</li>
+<li>look up a particular invoice or receipt number</li>
+<li>search for account names</li>
+<li>show all accounts payable/receivable</li>
+</ol>
+
+<p>When searching for invoices in a time span, you can also specify
+the receivable status.</p>
+
+<p>Search results are displayed under different tabs.  Not all tabs
+will be available in every case.  If multiple tabs are available, you
+can use them to quickly switch between different views.  For instance,
+if viewing an invoice, you can switch to the account statement, or to
+a list of payments against that invoice.</p>
+
+<h3>Account Tab</h3>
+
+<p>The account statement is a summary of the account, listing all
+active receivables and all completed payments, along with the balance
+owing. The account statement only includes those items that affect the
+account balance.  Non-active receivables, and invalid payments are not
+shown (but can be found under other tabs).</p>
+
+<p>(If an account search has turned up multiple matching accounts, you 
+may have to select one first.)</p>
+
+<h3>Invoice Tab</h3>
+
+<p>The invoice tab displays the selected receivable (or a list of
+receivables to choose from, if one has not been selected).  It also
+summarizes any payments that have been made against the selected
+receivable.</p>
+
+<p>The receivable status can be changed here.  WARNING: this may
+change the account statement.</p>
+
+<p>A list of payments against the selected receivable is also
+summarized here.</p>
+
+<h3>Payments Tab</h3>
+
+<p>Payments on the account or receivable are listed here.  Click the
+invoice number to jump to the recievable view.  Click the payment status
+to edit that payment.  Click "+Add payment" to add a new payment to
+the account.</p>
+
+<p>If you add a payment on the account, you will get a form to provide
+the following information:</p>
+
+<ul>
+<li>amount - note that you can enter negative amounts to reverse 
+previous payments, or apply credits to the account.</li>
+<li>method - how the payment was made</li>
+<li>status - the state of the payment.  For good payments, the status 
+should be "paid".  To cancel a previous payment, set its status to 
+"canceled".  To mark a payment as tentatively received (eg. a cheque
+that has not been cleared), use "received".  The status of "suspicious" 
+is normally used to flag automatic e-commerce payments that could not
+be validated through the gateway.  These should be checked, and then
+updated to "paid" or "canceled".</li>
+<li>invoice - a payment can optionally be tied directly to an invoice 
+so that you can quickly tell whether a particular receivable was paid.
+This is optional; all payments are recorded against the account in 
+any case.</li>
+<li>note - it is often useful to include notes for tracking or auditing 
+purposes</li>
+<li>post-processing - check this if you want your system to perform any
+extra automatic processing functions that normally occur following a 
+successful payment.  (For example, email notifications, activations, etc.) 
+Post-processing is only performed if it is a good payment (status paid)
+that is tied to a specific invoice.</li>
+</ul>
+
+<p>You will get the same form if editing an existing payment.
+However, it will not let you edit the payment amount.  This is to
+ensure that the history of payment activity remains clear.  If
+you need to correct a bad payment, you can do one of two things:</p>
+
+<ol>
+<li>cancel the payment, and add a new payment with the corrected values</li>
+<li>enter another payment for the difference in the amount actually
+paid (can be positive to raise the amount paid, or negative to reduce
+the amount paid).</li>
+</ol>
+
+<p>The second method gives a slightly better audit trail, since the
+original payment is left untouched.</p>

@@ -1,0 +1,2 @@
+table	alias	key	title	plural	report	read	insert	update	delete	search	index
+query	query	query_id	SQL Query	SQL Queries	table	2	3	3	3	2

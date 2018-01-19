@@ -1,0 +1,538 @@
+<a name='top'></a><h1>Forms</h1>
+
+<p>The Forms plug-in allows you to create, edit, and publish forms
+on your website, and use them to collect data for various
+purposes, including but not limited to:</p>
+
+<ul>
+<li>order forms</li>
+<li>questionnaires</li>
+<li>surveys</li>
+<li>registration forms</li>
+<li>requests for information</li>
+<li>quizzes &amp; tests</li>
+</ul>
+
+<p>Responses can be saved to the database and/or emailed to a list of
+addresses.</p>
+
+<a name='toc'></a>
+<h2>Topics</h2>
+
+<ul>
+<li><a href='#newform'>Making a new form</a></li>
+<li><a href='#form'>Working on a form</a></li>
+<ul>
+<li><a href='#newquestion'>Add questions to the form</a></li>
+<li><a href='#order'>Re-order questions</a></li>
+<li><a href='#layout'>Form layout and templates</a></li>
+<ul>
+<li><a href='#preamble'>Preambles</a></li>
+<li><a href='#matrixlayout'>Matrix Layouts</a></li>
+</ul>
+<li><a href='#security'>Form security</a></li>
+<li><a href='#receipt'>Receipts</a></li>
+</ul>
+<li><a href='#questions'>Manage the questions on a form</a></li>
+<ul>
+<li><a href='#confquestion'>Configure question</a></li>
+<li><a href='#questionformat'>Question formats</a></li>
+<li><a href='#questionlayout'>Custom question layouts</a></li>
+<li><a href='#longquestion'>Long questions</a></li>
+</ul>
+<li><a href='#responses'>Manage the responses received to a form</a></li>
+<ul>
+<li><a href='#allresponses'>View all responses</a></li>
+<li><a href='#summary'>Summary of responses</a></li>
+<li><a href='#filter'>Filter responses</a></li>
+</ul>
+</ul>
+
+<a name='newform'></a><h2>Making a new form</h2>
+
+<p>There are two ways to create a new form:</p>
+
+<ol>
+<li>copy an existing form (you can modify it later)</li>
+<li>start from scratch, by clicking the "+ new form" button</li>
+</ol>
+
+<p>If starting from scratch, you will be asked to define:</p>
+
+<ul>
+<li>The form title</li>
+<li>The form permissions - who is allowed to use the form</li>
+<li>The location of the form in your site. Select from one of the suggested locations, or enter the specific content ID of the form's parent content.</li>
+</ul>
+
+<p>You can edit these settings later, using the configure tool.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+
+<a name='form'></a><h2>Working on a form</h2>
+
+<p>To manage a form or its responses, click on the form name in the list
+of forms you have available. You will be presented with a toolbar that 
+has the following options:</p>
+
+<ul>
+<li>stats - a summary of the questions answered by all of your respondents.</li>
+<li><a href='#responses'>responses</a> - a listing of all responses; you can step through the pages, 
+search for keywords, and sort by clicking on the column headings.</li>
+<li>filter - select a subset of responses, based on the date of submission
+or the answers to particular questions.</li>
+<li>export - download all of the responses as a spreadsheet.</li>
+<li>preview - view the form as it will be shown to users. You can actually
+fill out and submit the form from this pane.</li>
+<li>configure - change the form setup parameters.</li>
+<li>layout - create or revise a custom form layout.</li>
+<li><a href='#questions'>questions</a> - modify individual questions</li>
+<li>+add - add a new question to the form.</li>
+<li>publish - get the public URL to the form, or create a special page just for
+this form.</li>
+<li>copy - create a new form, with the same setup as this one.</li>
+<li>delete - discard the form and its responses. It will be moved to
+the trash bin, and can be recovered from there if you change your mind.</li>
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='newquestion'></a><h3>Add questions to the form</h3>
+
+<p>There are two ways to add new questions to the form:</p>
+
+<ol>
+<li>Copy a similar question from another form. This is fast, accurate (fewer typos), and automatically makes use of existing translations.</li>
+<li>Create a new question from scratch.</li>
+</ol>
+
+<p>When creating questions from scratch,
+the <a href="#confquestion">configuration options</a> will
+automatically change to those that are appropriate for the question
+format you selected.</p>
+
+<p>Question formats are explained <a href="#questionformat">here</a>.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='order'></a><h3>Re-order Questions</h3>
+
+<p>To change the order of questions, click the <strong>order</strong>
+button. Drag the questions into their new order, then click
+the <strong>save order</strong> button.</p>
+
+<p>Note that if you have a custom form layout, the presentation of the
+questions is fixed by that layout. Re-ordering the questions will not
+change how the form appears. It will still change the order in
+which questions are shown in reports and exported data.</p>
+
+<p>Similarly, if you use a custom layout, you can reposition questions 
+in the layout without altering the question order.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='layout'></a><h3>Special Form Layouts</h3>
+
+<p>Forms will automatically be given a simple and versatile layout. If
+you need to customize this layout, you can create a custom form layout.
+Your form layout is a block of HTML containing merge codes that
+determine where your questions will be placed.</p>
+
+<p class="error">For experts only! Custom layouts override your
+question ordering, and increase the amount of work you need to do when
+adding or removing your questions, since the layout also has to be
+modified to support your new question list. Only make use of this
+feature if this extra work is worth the effort. For similar reasons, it is best
+to setup your layout after your questions are settled and stable.</p>
+
+<p>You can place whole questions using the question name. For example
+if you have a question whose short name is <code>email</code>, you can
+place it into your form layout using <code>[[email]]</code>. The
+entire question and input field will be substituted into that
+position. If you need to be more specific than that,
+use <code>[[email:prompt]]</code> or <code>[[email:input]]</code> to
+substitute just the question or just the input field.</p>
+
+<p>If you neglect to include all question inputs, the missing ones
+will automatically be appended to the end of your form layout. If you
+neglect to include all prompts, the missing ones will be ignored.</p>
+
+<p>The forms subsystem automatically generates useful form layouts, so
+that you don't have to. You can access these automatic layouts in the
+accordion panes below the layout editor. Copy-and-paste these (or
+sections of these) into the layout editor, and then modify to suit
+your needs.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='preamble'></a><h4>Preambles</h4>
+
+<p>Some forms, such as assessment quizzes and customer surveys,
+require lengthly preambles to explain the process of using the form or
+other things the respondent may need to know before filling out the
+form. The preamble can simply be put at the top of the layout, as
+free-form text.</p>
+
+<p>If you do not require any special layout of the actual form inputs,
+then do not include any of the merge codes in the layout. Only type in
+your preamble. Since any missing form elements are automatically
+appended, your form should appear right after the preamble with no
+extra work.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='matrixlayout'></a><h4>Matrix Layouts</h4>
+
+<p>When possible, the system will try to enhance your form layout by
+grouping questions with similar inputs. For example, if you have multiple
+questions in a row with the same set of radio button answers, then
+instead of the generic layout, which would be:</p>
+
+<div style="padding:15px; background-color:white;">
+<p>Question A:<br><input name="radio1" type="radio">yes<br><input name="radio1" type="radio">no<br><input name="radio1" type="radio">maybe</p>
+
+<p>Question B:<br><input name="radio2" type="radio">yes<br><input name="radio2" type="radio">no<br><input name="radio2" type="radio">maybe</p>
+</div>
+<br>
+
+<p>You will instead get a matrix of radio buttons:</p>
+
+<div style="padding:15px; background-color:white;">
+<table style="width:100%">
+<tr><th></th><th>yes</th><th>no</th><th>maybe</th></tr>
+<tr><td>Question A</td><td><input name="radio1" type="radio"></td><td><input name="radio1" type="radio"></td><td><input name="radio1" type="radio"></td></tr>
+<tr><td>Question B</td><td><input name="radio2" type="radio"></td><td><input name="radio2" type="radio"></td><td><input name="radio2" type="radio"></td></tr>
+</table>
+</div>
+<br>
+
+<p>This helps to automatically group similar questions in surveys and
+other long forms, to keep things more organized. To take advantage of
+this feature, simply make sure that these questions are adjacent to
+each other in the form. If you have adjacent questions that you do not
+want grouped in this way, put a label or preformatted question in
+between them.</p>
+
+<h4>Customizing Matrix Layouts</h4>
+
+<p>Radio buttons and checklists consist of a number of sub-inputs.
+If you want to place these sub-inputs individually, they are
+numbered starting at 1, and you can place them individually using:</p>
+
+<pre>
+[[<em>name</em>:input:N]]
+</pre>
+
+<p>where N is the number of the sub-input. Note that this only places
+the sub-input, not any text that goes along with the sub-input.</p>
+
+<p>The sample layouts at the bottom of the layout page include a
+layout with matrixes that replicates the default matrix layout. You
+can copy/paste this to modify it.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='security'></a><h2>Form Security</h2>
+
+<p>In the form configuration, you have a few security options to
+control who may use the form.</p>
+
+<p>The <strong>access</strong> level determines who may submit responses
+to this form. Anyone of the selected access level or higher may post
+responses. Individual questions can also specify their own access levels; 
+underprivileged users simply do not see those questions.</p>
+
+<p>There are a few flags you can make use of to limit form abuse by users 
+or robots:</p>
+
+<dl>
+
+<dt><strong>confirmation screen</strong></dt>
+<dd>If selected, the form does not actually get processed when you submit.
+Rather it echoes your inputs, and asks you to confirm them. This provides 
+a helpful proof-reading check, and can also sometimes block the occasional
+robot that likes to fill out forms with random info to see what is 
+behind them.</dd>
+
+<dt><strong>captcha</strong></dt>
+<dd>If selected, the user must solve a CAPTCHA to submit the form. This
+is a puzzle, typically requiring the user to correctly transcribe an image
+of distorted text.</dd>
+
+<dt><strong>robot counter-measures</strong></dt>
+<dd>If selected, the form will include a few additional tricks designed
+to prevent abuse by automated robots that like to fill out forms for
+illicit purposes. This can help to reduce spam or other automated abuses 
+of your forms.</dd>
+
+<dt><strong>single-submission only</strong></dt>
+<dd>If selected, the form will not accept responses from users who
+have already submitted a response. The form's access level cannot be public
+for this to work, otherwise this option will be ignored.</dd>
+
+</dl>
+
+<p>Additionally, you can disable a form by changing its status
+from <strong>published</strong> to some other setting, for example:</p>
+
+<ul>
+<li>archived - leave the form up, but disallow responses</li>
+<li>draft - resume editing the form, disallowing responses while you do so</li>
+<li>canceled - disable the form entirely, removing it from public view</li>
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='receipt'></a><h2>Receipts</h2>
+
+<p>By default, when a form submission is received, the system will
+return a simple "Thank You". You can specify a custom receipt message
+by clicking the <strong>receipt</strong> button in the form
+configuration screen.</p>
+
+<p>The custom reply message can include HTML mark-up, and also merge fields
+that will be replaced with appropriate data when displayed to the user.
+Merge fields are written like this: <code>[[name]]</code>, where <em>name</em>
+is any of:</p>
+
+<ul>
+
+<li> short reference name of any field in the form - this will be replaced
+with the actual answer provided by the user in that field. For example:
+<code>Thank you for your input, [[first_name]].</code></li>
+
+<li> <em>_date</em> - this will be replaced with the date and time the
+response was received.</li>
+
+<li> <em>_summary</em> - this will be replaced with the complete set of 
+answers that the user provided, in a table format.</li>
+
+</ul>
+
+<p>If you would like to receive a copy of all responses submitted to a
+form, enter the email address to send to in the form configuration
+screen.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name=questions></a><h2>Manage the questions on the form</h2>
+
+<p>From the questions button in the <a href='#form'>general form
+overview</a>, you get a table summarizing the questions on the
+form.</p>
+
+<ul>
+<li>Click the question name to <a href='#confquestion'>reconfigure the 
+question</a> itself.</li> 
+<li>Click the + add question link to add a new question to the form.</li>
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='confquestion'></a><h3>Configure question</h3>
+
+<p>When you click into a question, you have options to preview,
+configure, or delete that question, as well
+as <a href="#questionlayout">customize the layout</a>.</p>
+
+<p class="warn">If you delete a question, you also delete all answers that have
+been given to that question by any previous respondents.</p>
+
+<p>Questions have many configuration settings:</p>
+
+<ul>
+<li>Full question - this is what gets displayed to the user when they view the form.</li>
+<li>Brief question - this is used in reports and other places where the full question might be too verbose.</li>
+<li>Question name - this is used in form HTML encoding and layouts. The name should be 
+unique (in this form), and should contain no spaces or punctuation characters.</li>
+<li>Access level - who can see this question.</li>
+<li><a href="#questionformat">Format</a> - the type of answer this question has.</li>
+<li>Datatype - forces answers to conform to certain patterns.</li>
+<li>Options - multiple-choice questions can list the allowed answers here. Separate each answer by the bar character, "|". <strong>Do not add spaces or carriage-returns around the bar character.</strong></li>
+<li>Default/preset - the question will be pre-filled with this value.</li>
+<li>Placeholder hint - the question field will contain this suggestion, which can be used to suggest formatting or other expectations.</li>
+<li>Size - the actual width of the input field.</li>
+<li>Maximum length - the character limit of the input field.</li>
+<li>Min, Max, Step - for numeric fields, this controls the range and intervals of the settings.</li>
+<li>User must provide an answer - the form will not submit until this question is answered, if checked.</li>
+<li>Pre-checked - (for checkboxes only) the box will be checked by default.</li>
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='questionformat'></a><h3>Question Formats</h3>
+
+<table class="Report">
+<thead><tr><th>Format</th><th>Example</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>short text</td><td><input name="foo" type="text" value="single-line of text"></td><td></td></tr>
+<tr><td>long text</td><td><textarea name="foo" rows=3 cols=40>multiple 
+lines 
+of text</textarea></td><td></td></tr>
+<tr><td>select</td><td><select name="foo"><option>choice 1</option><option>choice 2</option><option>choice 3</option></select></td><td></td></tr>
+<tr><td>multiselect</td><td><select multiple name="foo"><option>choice 1</option><option>choice 2</option><option>choice 3</option></select></select></td><td>use shift-click and ctrl-click to select more than one option</td></tr>
+<tr><td>radio</td><td><input name="radiofoo" type="radio">choice 1<br><input name="radiofoo" type="radio">choice 2</td><td></td></tr>
+<tr><td>radio+other</td><td><input name="radiofoo" type="radio">choice 1<br><input name="radiofoo" type="radio">choice 2<br><input name="radiofoo" type="radio">other: <input name="foo" type="text"></td><td></td></tr>
+<tr><td>checkbox</td><td><input name="foo" type="checkbox">yes</td><td></td></tr>
+<tr><td>checklist</td><td><input name="foo" type="checkbox">choice 1<br><input name="foo" type="checkbox">choice 2<br><input name="foo" type="checkbox">choice 3</td><td></td></tr>
+<tr><td>checklist+other</td><td><input name="foo" type="checkbox">choice 1<br><input name="foo" type="checkbox">choice 2<br><input name="foo" type="checkbox">choice 3<br><input name="foo" type="checkbox">other: <input name="foo" type="text"></td><td></td></tr>
+<tr><td>password</td><td><input name="foo" type="password" value="foobar"></td><td></td></tr>
+<tr><td>hidden</td><td></td><td>Input is invisible, but is included with the form post.</td></tr>
+<tr><td>label, preformatted</td><td>Any text or instructions you want to include in the middle of the form, but which does not actually ask for input.</td><td>Simple way to include instructions, headings, or section breaks in mid-form.</td></tr>
+<tr><td>file</td><td><input name="foo" type="file"></td><td></td></tr>
+<tr><td>number</td><td><input name="foo" type="number" value=100></td><td>limited browser support</td></tr>
+<tr><td>range</td><td><input name="foo" type="range" min=1 max=10 value=5></td><td>limited browser support</td></tr>
+<tr><td>date</td><td><input name="foo" type="date"></td><td>limited browser support</td></tr>
+<tr><td>time</td><td><input name="foo" type="time"></td><td>limited browser support</td></tr>
+<tr><td>url</td><td><input name="foo" type="url"></td><td>limited browser support</td></tr>
+<tr><td>email</td><td><input name="foo" type="email"></td><td>limited browser support</td></tr>
+</tbody>
+</table>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='questionlayout'></a><h3>Customizing Layout of Individual Questions</h3>
+
+<p>By default, individual questions are presented like this:</p>
+
+<pre>
+question-prompt
+input-field
+</pre>
+
+<p>For example:</p>
+
+<div style="background:white; padding:15px">
+Last Name<br>
+<input name=foo>
+</div>
+<br>
+
+<p>For checkboxes, the layout is <code>input question</code>, for example:</p>
+
+<div style="background:white; padding:15px">
+<input type=checkbox name=foo> I agree to the terms
+</div>
+<br>
+
+<p>If these defaults are sufficient, there is nothing more you need to
+do. But if this is inadequate, you can customize the question
+layout.</p>
+
+<p>To make a custom question layout, use the layout tool to update the
+question, and this new revision will be used as the question
+layout. You can place the question and input field in your layout
+using the tags
+<code>[[prompt]]</code> and <code>[[input]]</code>.</p>
+
+<p>If you leave <code>[[input]]</code> out, it will automatically be
+appended to the end of your question layout.</p>
+
+<p>Custom question layouts are useful in the following cases:</p>
+
+<ul>
+<li>You require special HTML formatting or layout in your question text.</li>
+<li>You require the question and input tags to be placed in non-standard 
+locations compared to other questions.</li>
+<li>Your question text is longer than 255 characters (<a href="#longquestion">see here</a>).</li>
+</ul>
+
+<p><strong>Example</strong> (specialized placement of input field):</p>
+<div style="background:white; padding:15px">
+By submitting this form, I, <code>[[input]]</code>, agree to the terms and
+conditions.
+</div>
+<br>
+
+<p>This will appear like (using a placeholder hint):</p>
+<div style="background:white; padding:15px">
+By submitting this form, I, <input type=text name=foo placeholder="type your full name">, agree to the terms
+and conditions.
+</div>
+<br>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='longquestion'></a><h3>Long questions</h3>
+
+<p>The question itself (<em>Full question, as displayed to the user</em>) is
+normally limited to 255 characters. If you have a lengthly question
+that requires more characters than this, use the following procedure:</p>
+
+<ol>
+
+<li>Use the <a href="#questionlayout">question layout</a> feature to
+build a longer question. It can even include other HTML markup, such
+as tables, links, and images.</li>
+
+<li>Do not include the <code>[[prompt]]</code> code in your question 
+layout; just type your full question as you would like it to appear.</li>
+
+<li>The regular question field (<em>Full question, as displayed to the
+user</em>) will not be used to display the question in this case. You
+can shorten it to be the same as the <em>Brief form of question, used
+in reports</em>.</li>
+
+</ol>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name=responses></a><h2>Manage the responses received to a form</h2>
+
+<p>Responses can be viewed and exported using the <strong>responses</strong>, 
+<strong>export</strong>, <strong>filter</strong>,
+and <strong>stats</strong> tools.</p>
+
+<p>Note that you can submit responses to the form directly from the
+preview screen. When you post to the form, it will take you to the
+form's page on the live site.</p>
+
+<a name=allresponses></a><h3>View all responses</h3>
+
+<p>Reponses can be viewed using the <strong>responses</strong> button
+in the <a href='#form'>form overview</a>. Responses are listed in a
+table with the following columns:</p>
+
+<ol>
+<li>Options - links to view, edit, or delete the individual response</li>
+<li>Response - an ID number that uniquely identifies this response</li>
+<li>Received - the date and time that the response was received</li>
+<li>From - the user who submitted the response, if known</li>
+<li>Language - the language used by the submitter</li>
+<li>...all questions on the form are shown in the remaining columns</li>
+</ol>
+
+<p>This information can be exported in various formats using the links
+at the end of the report, or directly from the toolbar using the
+<strong>export</strong> button (which exports to Excel format).</p>
+
+<p>Use the search tool to look for a certain text string in the
+data. Exports will include all data, not just the ones that match your
+search. To export filtered data, use the <a href="#filter">filter</a>
+tool.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name=summary></a><h3>Summary of responses</h3>
+
+<p>To get a simple overview of all responses received, use
+the <strong>stats</strong> button.</p>
+
+<p>Each question is summarized, including the total number of answers
+received, and a % of all responses that answered that question. These
+statistics are summarized in a simple bar chart.</p>
+
+<p>For multiple-choice answers, each answer option will be shown
+separately, with a count and % of responses that selected this
+answer. If the anwsers are numeric, it will also compute an average.</p>
+
+<p>The stats can be exported; in this case the bar chart will be rendered as
+a row of hash characters.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name=filter></a><h3>Filter responses</h3>
+
+<p>The filter tool allows you to select and export a subset of
+responses. You can apply a set of filter conditions:</p>
+
+<ul>
+
+<li>Start and end dates for when the responses were received.</li>
+
+<li>You can provide answers to any questions; only reponses with
+matching answers will be selected. You can provide answer fragments
+here, and they are not case-sensitive.</li>
+
+</ul>
+
+<p>After performing a filtered search, you can click on the report
+filters button to adjust your filters, or you can export the selected
+set of answers.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>

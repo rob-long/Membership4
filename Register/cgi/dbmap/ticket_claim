@@ -1,0 +1,12 @@
+column	datatype	size	label	display	read	write	validate	default
+ticket_claim_id	key#	0	Ticket Claim ID	full	5	9	hard
+ticket_id	key:ticket	0	Ticket	brief	5	7	soft
+account_id	key:account	0	Purchaser	brief	5	7	soft
+guest_account_id	key:account	0	Guest	full	5	7	yes
+status	list:ticket_claim_status	20	Status	brief	5	7	soft
+parent	key:ticket_claim	0	Primary Registration	no	5	7	yes
+first_name	string	80	First Name	key	5	7	no
+last_name	string	80	Last Name	key	5	7	no
+dupekey	int	0	Dupe Key	full	5	7	no
+response_id	key:response	0	Registration Info	brief	5	7	yes
+ctime	timestamp	0	Registered on	full	1	9	no

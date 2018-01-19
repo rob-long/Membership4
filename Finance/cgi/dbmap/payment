@@ -1,0 +1,11 @@
+column	datatype	size	label	display	read	write	search	validate
+payment_id	key#	0	Payment ID	no	8	9	no	hard
+account_id	key:account	0	Account	brief	5	8	yes	yes
+receivable_id	key:receivable	0	Receivable	full	5	5	yes	yes
+date	timestamp	0	Date	key	5	9	yes	yes
+amount	decimal	8,2	Amount	brief	5	8	yes	yes
+method	list:payment_method	20	Payment Method	brief	5	9	yes	yes
+ident	string	40	Identifier	full	5	8	yes	no
+status	list:payment_status	20	Status	brief	5	5	yes	soft
+note	text	100	Note	full	5	5	yes	no
+uid	key=user	0	Recorded by	full	5	9	yes	yes

@@ -1,0 +1,177 @@
+
+table.Receivable { 
+        border:1px #2c435b solid; 
+        border-collapse:collapse; 
+	margin-bottom:10pt;
+}
+table.Receivable td { 
+        margin:0px; 
+        border-left:1px #2c435b dotted; 
+        padding:4px; 
+}
+table.Receivable td.deleted { 
+        text-decoration:line-through;
+}
+table.Receivable tfoot { 
+        margin:0px; 
+        border-top:1px #2c435b dotted; 
+        padding:4px; 
+}
+table.Receivable tfoot td { 
+        margin:0px; 
+        border-left:0px white solid;
+        padding:4px; 
+}
+table.Receivable th { 
+        border:1px #2c435b dotted; 
+        margin:0px; 
+        padding:4px; 
+        background-color:#97b9dc;
+	font-weight:bold; 
+	font-size:10px; 
+	color:black;
+}
+.number {
+	text-align:right;
+}
+.purchasedObject { 
+    font-style:italic;
+    color:grey;
+    font-size:80%;
+}
+.hidden,.deleted { 
+    color:grey;
+}
+
+.greybox {
+    border:1px solid #999;
+    background-color:#eee;
+    padding:20px;
+}
+
+/* Invoice box inside TabBox */
+
+.tabbox .box .boxpane {
+	background-color:#eee;
+}
+
+.tabbox .box .boxpane table {
+	background-color:white;
+}
+
+/* errorbox inside basic box inside tabbox */
+
+.tabbox .errorbox .boxpane { 
+    background:none;
+}
+
+
+.num {
+	text-align:right;
+}
+.debit {
+	color:red;
+}
+
+a.close {
+    display:block;
+    float:right;
+    text-align:center;
+    border:1px solid #bbb;
+    padding:2px;
+    width:40px;
+    font-size:xx-small;
+}
+a.close:hover {
+    background-color:#ddd;
+    text-decoration:none;
+}
+div.listitem {
+    color:#999;
+    font-size:80%;
+    margin-top:15px;
+}
+a.listcontrol {
+    padding-right:8px;
+}
+div.listitem div.list {
+    padding:10px;
+    border:1px solid #bbb;
+    margin-left:0px;
+}
+div.listitem p {
+    color:black;
+}
+div.listitem form {
+    color:black;
+}
+
+.account_address {
+    padding-top:10px;
+    padding-bottom:10px;
+}
+form div.Receivable {
+    padding:5px;
+    border:1px solid black;
+    height:200px;
+    overflow:auto;
+}
+
+dt { font-weight:bold; }
+dd { color:grey; font-size:80%; }
+#refundables { color:black; margin-top:5px; margin-bottom:5px; }
+
+table.toolbar div.popup {
+    background-color:white;
+    width:125px;
+    left:0px;
+    top:20px;
+}
+div.popup a {
+    padding:0px;
+    border-width:0px;
+    background-color:white;
+    color:blue;
+    text-decoration:none;
+    margin-left:0px;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+div.popup a:hover {
+  text-decoration:none;
+  background-color:#ccc;
+  border:0px;
+}
+div.popup a:active {
+  background-color:white;
+}
+a.popup_close {
+    display:block;
+    color:#666;
+    float:right;
+    text-align:center;
+    border:1px solid #8c863e;
+    padding:2px;
+    width:10px;
+    font-size:xx-small;
+}
+a.popup_close:hover {
+    background-color:#e6e4c1;
+    text-decoration:none;
+}
+
+ul.matchingAccounts li.isMember {
+    font-weight:bold;
+    color:green;
+}
+ul.matchingAccounts li.hasContact {
+    font-weight:bold;
+}
+
+@media print
+{    
+    .noprint {
+        display: none !important;
+    }
+}

@@ -1,0 +1,128 @@
+<h1>SimpleMenu</h1>
+
+<p><img src=icon.gif align=right style="padding:8px;">
+SimpleMenu is a plug-in that automatically generates menus, navigation
+bars, and sitemaps for your website.  It will generate menus in any of 
+the following formats:</p>
+
+<ul>
+<li> <b>vertical</b> - menu items are stacked one above the other, as 
+commonly seen in sidebar menus.  Vertical menus will expand to show one
+level of submenu.</li>
+<li> <b>horizontal</b> - menu items are listed side-by-side.  The menu
+items are the top-level pages of the site.</li>
+<li> <b>path</b> - the page, parent page, grandparent, and so on are 
+displayed side-by-side in a cookie-crumb format.</li>
+<li> <b>sitemap</b> - all pages of the site are displayed in a multi-level 
+list.</li>
+</ul>
+
+<p>To insert a menu into a page, use one of the following methods:</p>
+
+<ol>
+
+<li> In the HTML editor, place your cursor where you want the menu to
+appear.  Click on the Web Application tool in the editor toolbar.
+Select <b>SimpleMenu</b> from the list of Web Applications.  Then,
+select the type of menu to insert.</li>
+
+<li> In plain text mode, add the following tag into your HTML:
+<tt>&lt;!--&amp;SimpleMenu(TYPE)--&gt;</tt>.  "TYPE" should be one of
+the above menu types.</li>
+
+</ol>
+
+<p>The vertical and horizontal menus can additionally be modified
+using the following submenu options:</p>
+
+<ul>
+
+<li><b>submenu</b> - display menu as if the children of the current
+page were the top level menu.  If there is no submenu, then it shows
+the menu at the level of the current page.  (That means that a menu is
+always displayed.)</li>
+
+<li><b>submenu-only</b> - display menu as if the children of the
+current page were the top level menu.  If there is no submenu, then
+nothing is displayed.</li>
+
+</ul>
+
+<p>The options to select these will also be available in the Web
+Application tool.  In plain text mode, add the option to the main
+option with a comma.  For example:</p>
+
+<pre>
+&lt;!--&amp;SimpleMenu(horizontal,submenu-only)--&gt;
+</pre>
+
+<h2>Sections</h2>
+
+<p>By default, SimpleMenu displays a menu for the current section.</p>
+
+<p>To generate a menu for the parent section instead of the current
+section, add the "parent" parameter:</p>
+
+<pre>
+&lt;!--&amp;SimpleMenu(horizontal,parent)--&gt;
+</pre>
+
+<p>To generate a menu for a child section instead of the current section, 
+specigy the child's section ID:</p>
+
+<pre>
+&lt;!--&amp;SimpleMenu(horizontal,section=NNN)--&gt;
+</pre>
+
+<p>You can also include child sections in the contents of a normal menu,
+(as if they were pages), by setting the following configuration setting:</p>
+
+<pre>
+show_subsections = 1
+</pre>
+
+<p>The subsections are shown after regular pages.</p>
+
+<h2>Menu Styles</h2>
+
+<p>Menu links all have the CSS class "menu".  Vertical submenu links have 
+the CSS class "submenu".  By default, horizontal and vertical menus are 
+wrapped in <tt>&lt;span class="menu"&gt;...&lt;/span&gt;</tt> tags.  These
+CSS classes can be used to apply special styles to your menus.</p>
+
+<h2>Spacer Strings</h2>
+
+<p>SimpleMenu uses HTML strings to space out menu items.  The default
+HTML spacers are as follows:</p>
+
+<table border=1>
+<tr><th>Menu Type</th><th>Spacer HTML</th></tr>
+<tr><td>vertical</td><td><tt>&lt;br&gt;</td></tr>
+<tr><td>horizontal</td><td><tt>&amp;nbsp;|&amp;nbsp;</td></tr>
+<tr><td>path</td><td><tt>&amp;nbsp;&amp;gt;&amp;nbsp;</td></tr>
+</table>
+
+<p>In addition, SimpleMenu adds a prefix string in front of submenu
+items in vertical menus.  By default the prefix string is a series of
+<tt>&amp;nbsp;</tt> characters, to indent the submenu.</p>
+
+<p>All of the above HTML strings can be customized in the SimpleMenu
+configuration file, <tt>cgi-bin/conf/SimpleMenu.conf</tt>.</p>
+
+<h2>Customizing Menus with CMS objects</h2>
+
+<p>Vertical menus can be further customized by adding three special content
+objects to your page or template:</p>
+
+<ul>
+<li> <b>SimpleMenuTop</b> - this content is placed in front of all menu items.</li>
+<li> <b>SimpleMenuBot</b> - this content is placed after all menu items.</li>
+<li> <b>SimpleMenuMid</b> - this content is placed between each menu item.</li>
+</ul>
+
+<p>These content items can be used to define HTML snippets to place your
+menus into a special table, or to insert divider graphics, for instance.</p>
+
+<p>Horizontal menus can be styled the same way, using <b>SimpleMenuTopH</b>,
+<b>SimpleMenuBotH</b>, <b>SimpleMenuMidH</b>.</p>
+

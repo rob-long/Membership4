@@ -1,0 +1,19 @@
+.TagCloud { padding:50px; }
+.TagCloud a { text-decoration:none; }
+a.contentTag { color:red; }
+span.contentTags { 
+    font-size:80%;
+    background-color:#ddd;
+    padding:2px;
+    margin-left:10px;
+    -webkit-border-radius:2px;    
+    -moz-border-radius:2px;    
+}
+
+table div.Tags_content_listing {
+    padding-left:25px;
+}
+
+/* deprecated ? */
+.TagsKeywords { font-weight:normal; color: red; }
+.TagsKeywords em { font-style: italic; text-decoration:underline; }

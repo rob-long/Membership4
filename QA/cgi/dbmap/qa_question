@@ -1,0 +1,10 @@
+column	datatype	size	label	display	read	write	search	validate
+qa_question_id	key#	0	ID	none	8	9	no	hard
+qa_form_id	key:qa_form	0	Form ID	full	5	5	yes	soft
+qa_base_id	key:qa_base	0	Model Question	key	5	5	yes	soft
+flags	set:qa_flags	255	Flags	brief	5	5	no	no
+name	variable_name	255	Short Reference	brief	5	5	yes	no
+value	string	255	Preset Value	brief	5	5	no	no
+sortkey	int	0	Sort key	brief	5	5	no	no
+mtime	timestamp	0	Last Modified	full	5	9	no	no
+ctime	timestamp	0	Created	full	5	9	no	no

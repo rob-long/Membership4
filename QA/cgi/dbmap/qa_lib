@@ -1,0 +1,6 @@
+column	datatype	size	label	display	read	write	search	validate	default
+qa_lib_id	key#	0	ID	none	5	9	no	hard
+section_id	key:content	0	Section	ID	hidden	5	5	yes	hard
+title	string	128	Title	key	5	5	yes	soft
+type	list:qa_form_type	80	For use with these forms	brief	5	5	yes	yes
+ctime	timestamp	0	Created	full	5	9	no	no

@@ -1,0 +1,4 @@
+table	alias	key	title	plural	read	insert	update	delete	search	index	class
+contact	contact	contact_id	Contact	Contacts	1	1	1	1	5	account_id;content_id	Modules::ID::Contact
+contact_info	contact_info	contact_info_id	Contact Info	Contact Info	1	1	1	1	5
+contact_list	contact_list	contact_list_id	Contact List	Contact Lists	7	7	7	7	7

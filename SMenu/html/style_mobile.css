@@ -1,0 +1,33 @@
+@media screen and (max-width: 40em) {
+.js .main-navigation{display:none;}
+.js .slicknav_menu{display:block;}
+}
+
+/* VERTICAL http://cssmenumaker.com/blog/css-flyout-menu-starter-kit */
+@media screen and (min-width: 40em) {
+.js .main-navigation{display:block;}
+.js .slicknav_menu{display:none;}
+
+.vertical-menu {padding: 0; margin: 0; border: 0;}
+.vertical-menu ul,.vertical-menu ul li,.vertical-menu ul ul {list-style: none; margin: 0; padding: 0; border: 0;}
+.vertical-menu ul {position: relative; z-index: 397;}
+.vertical-menu ul li {min-height: 1px; line-height: 1em; vertical-align: middle;}
+.vertical-menu ul li:hover {position: relative; z-index: 399; cursor: default;}
+.vertical-menu ul ul {visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 398;}
+.vertical-menu ul ul ul {top: 0px; left: 99%;}
+.vertical-menu ul li:hover > ul { visibility: visible;}
+.vertical-menu ul ul {top: 0px; left: 99%;}
+.vertical-menu ul li a{display: block;}
+
+.horizontal-menu ul{list-style:none;padding:0;margin:0;}
+.horizontal-menu ul li{display:block;position:relative;float:left;}
+.horizontal-menu li ul{display:none;}
+.horizontal-menu ul li a{display:block;white-space:nowrap;}
+.horizontal-menu li:hover>ul{display:block;position:absolute;}
+.horizontal-menu li:hover li{float:none;}
+.horizontal-menu li ul li{border-top:0;}
+.horizontal-menu ul ul ul{left:100%;top:0;}
+.horizontal-menu ul:before,.horizontal-menu ul:after{content:" ";display:table;}
+.horizontal-menu ul:after{clear:both;}
+}
+

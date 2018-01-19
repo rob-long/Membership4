@@ -1,0 +1,53 @@
+.sortable li {
+  border:1px solid #ccc;
+  border-radius:5px;
+  background-color:white;
+  padding:5px;
+  margin:5px;
+  font-family:sans-serif;
+}
+.placeholder {
+  background-color:#ff9 !important;
+  height:12pt;
+}
+.sortable li li {
+  background-color:#eee;
+}
+.sortable li li li {
+  background-color:white;
+}
+.sortable li li li li {
+  background-color:#eee;
+}
+.sortable li li li li li {
+  background-color:white;
+}
+ul {
+  list-style-type:none;
+}
+ul.sortable {
+  padding-left:0px;
+}
+.statusInactive { color:grey; }
+.vis_visible { font-weight:bold; }
+.restricted { color:red; }
+em.vis_hidden { 
+    color:grey; 
+    float:right;
+}
+.status {
+    color:white;
+    background-color:grey;
+    margin:2px 0px 2px 4px;
+    padding:2px 3px 1px 4px;
+    font-weight: normal;
+    font-size:x-small;
+    border-radius: 3px;
+}
+.statusPublished { background-color:green; }
+.statusArchived { background-color:orange; }
+.statusApproved { background-color:orange; }
+.statusQueued { background-color:orange; }
+.statusDraft { background-color:magenta; }
+.statusCanceled { background-color:red; }
+.statusRejected { background-color:red; }

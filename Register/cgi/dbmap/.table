@@ -1,0 +1,3 @@
+table	alias	key	title	plural	read	insert	update	delete	search	index	class
+ticket	ticket	ticket_id	Ticket	Tickets	5	5	5	5	5	content_id	Modules::Registration::Ticket
+ticket_claim	ticket_claim	ticket_claim_id	Ticket Claim	Ticket Claims	5	5	5	5	5	ticket_id;account_id

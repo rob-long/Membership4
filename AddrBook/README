@@ -1,0 +1,3 @@
+The AddrBook plugin is for managing your contacts database.  It
+includes the ID framework (with Contact, ContactList, and Location
+classes), which is used in member and account management.

@@ -1,0 +1,7 @@
+type	tag	regexp
+list:receivable_type	select	receivable|payable
+list:receivable_status	select	active|inactive|processing|canceled|advisory
+list:receivable_item_status	select	active|hidden|readonly|deleted
+list:payment_method	select	cash|credit card|cheque|money order|e-commerce|other
+list:payment_status	select	paid|received|processing|canceled|suspicious
+list:surcharge_status	select	active|inactive

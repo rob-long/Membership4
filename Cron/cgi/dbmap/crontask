@@ -1,0 +1,11 @@
+column	datatype	size	label	display	read	write	validate
+crontask_id	key#	0	Task ID	brief	8	9	hard
+description	string	255	Description	key	7	8	soft
+module	string	80	Module	brief	7	8	soft
+command	string	80	Action	brief	8	8	soft
+type	string	80	Type	brief	8	8	yes
+id	string	20	ID	brief	8	8	yes
+method	list:cron_method	20	Method	brief	7	8	soft
+exectime	datetime:picker	0	Execution Time	brief	8	8	yes
+uid	key:user	0	Run as	brief	8	8	soft
+status	list:cron_status	20	Status	brief	7	8	soft

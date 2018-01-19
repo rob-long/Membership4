@@ -1,0 +1,651 @@
+<h1>Comments</h1>
+
+<p>The Comments provides system-wide access to comments that have been
+posted in various places. This is useful for various purposes, such 
+as:</p>
+
+<ul>
+<li>Summarizing recent comments received on a site, regardless of whether they
+are posted in forums, blogs, or elsewhere.</li>
+<li>Moderating new comments in a single 
+
+questionnaires</li>
+<li>surveys</li>
+<li>registration forms</li>
+<li>requests for information</li>
+<li>quizzes &amp; tests</li>
+</ul>
+
+<p>Responses can be saved to the database and/or emailed to a list of
+addresses.</p>
+
+<h2>Web Form Basics</h2>
+
+<p>Familiarize yourself with the following terms and concepts before
+attempting to create or edit web forms.</p>
+
+<p>Web forms are built around the concept of <b>questions</b> and
+<b>answers</b> received to those questions.  Questions are arranged
+into groups so they can be presented together.  A complete group of
+questions is a <b>form</b> and the complete set of answers received
+from a given user is a <b>response</b>.  Every question can keep track
+of its translations into various languages, and automatically map
+answers back to the default language.</p>
+
+<p>Questions are created and managed as generic, reusable questions in
+your question bank, which is broken down into several question
+<b>libraries</b> for organization purposes. This allows you to re-use
+common questions (eg. name, address, phone number, etc.) without
+having to re-create and translate them every time you need them. To
+create a form, you simply pick the questions you want from your
+question bank, from those that you have available. If the desired
+question is not availble in your question bank, you will need to make
+it, first.</p>
+
+<h3>General Procedure</h3>
+
+<ol>
+<li> First, you create a form, and fill it with questions from your
+question bank.</li>
+<li> Then you publish this form somewhere on your website so that users
+can find it and fill it in.</li>
+</ol>
+
+<h2>Getting Around</h2>
+
+<p>The administration interface is divided into Forms and Libraries.</p>
+
+<p><img src='help1.png' border=1></p>
+
+<p>The functions are similarly divided into Form management and
+Library management, arrived at through these two reports. Creating
+forms is very easy if the questions are already available in your
+libraries. You may need to spend a little time adding useful questions
+to your libraries before you can set up some forms.</p>
+
+<a name='toc'></a>
+<ul>
+<li><a href='#form'>Forms</a></li>
+<ul>
+<li><a href='#newform'>Making a new form</a></li>
+<li><a href='#form'>Working on a form</a></li>
+<ul>
+<li><a href='#responses'>Review/export the responses</a></li>
+</ul>
+<li><a href='#questions'>Manage the questions on a form</a></li>
+<ul>
+<li><a href='#confquestion'>Configure question</a></li>
+<li><a href='#rmquestion'>Remove question from the form</a></li>
+</ul>
+<li><a href='#newquestion'>Add new questions to the form</a></li>
+<li><a href='#confform'>Configure the basic form behaviour</a></li>
+</ul>
+<li><a href='#libraries'>Question libraries</a></li>
+<ul>
+<li><a href='#qbank'>Manage your question bank</a></li>
+<ul>
+<li><a href='#editquestion'>Configure/edit question</a></li>
+<li><a href='#translations'>Update translations</a></li>
+<li><a href='#delquestion'>Delete question</a></li>
+</ul>
+<li><a href='#newbase'>Create new questions</a></li>
+</ul>
+</ul>
+
+<p>Additional information is available on:</p>
+
+<ul>
+<li><a href='#layout'>Form layout and templates</a></li>
+<li><a href='#security'>Form security</a></li>
+<li><a href='#reply'>Reply messages</a></li>
+<li><a href='#custom'>Customizing response handling</a></li>
+</ul>
+
+<a name='forms'></a><h2>Forms</h2>
+
+<p>Forms are for presenting a set of questions to the user, and
+processing their answers.</p>
+
+<a name='newform'></a><h3>Making a new form</h3>
+
+<p>To create a new form, Click the <u>+ new form</u> button. This
+takes you through a 4-step setup wizard.</p>
+
+<ol>
+
+<li>Describe your form with a title, and optionally select some
+security options and a form type. The form type will determine which
+questions will be made available to this form.</li>
+
+<li><p>Add questions to the form. Simply click on the questions to add
+them. Added questions will be marked with a checkmark, and will be
+added to the list of selected questions at the bottom. (Click on the
+red X to remove them.)</p>
+
+<p>If your desired question does not exist in your libraries, use the
+New Question tab to add it. Select the question type, and type in the
+question itself. For multiple choice answers, you should provide all
+of the possible answers, separated by a bar character, for
+example <code>yes|no|maybe</code>. Select a library to categorize your
+new question for organization purposes.</p>
+
+<p>Before proceeding to the next step, check off the questions that should
+be required.</p></li>
+
+<li>On the submission step, provide a thank-you message to
+respondents, and any email addresses you would like to receive
+notifications when the form is submitted.</li>
+
+<li>On the final step, the form is created. Use the toolbar buttons to
+perform any additional advanced configurations.</li>
+
+</ol>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+
+<a name='form'></a><h3>Working on a form</h3>
+
+<p>To manage a form or its responses, click on the form name in the list
+of forms you have available. You will be presented with a toolbar that 
+has the following options:</p>
+
+<ul>
+<li>stats - a summary of the questions answered by all of your respondents.</li>
+<li><a href='#responses'>responses</a> - a listing of all responses; you can step through the pages, 
+search for keywords, and sort by clicking on the column headings.</li>
+<li>filter - select a subset of responses, based on the date of submission
+or the answers to particular questions.</li>
+<li>export - download all of the responses as a spreadsheet.</li>
+<li>preview - the form as it will be shown to users. You can actually
+fill out and submit the from from this pane.</li>
+<li>configure - change the form setup parameters. These are the same 
+questions you answered when you created the form.</li>
+<li>layout - create or revise a custom form layout.</li>
+<li><a href='#questions'>questions</a> - modify or move your questions around. (see below)</li>
+<li>+add - add a new question to the form.</li>
+<li>publish - get the public URL to the form, or create a special page just for
+this form.</li>
+<li>copy - create a new form, with the same setup as this one.</li>
+<li>delete - discard the form and its responses. It will be moved to
+the trash bin, and can be recovered from there if you change your mind.</li>
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name=responses></a><h4>Review/export the responses</h4>
+
+<p>Reponses can be viewed using the responses, filter, and export
+buttons in the <a href='#form'>form overview</a>. Responses are listed
+in a table with the following columns:</p>
+
+<ol>
+<li>Options - links to view, edit, or delete the individual response</li>
+<li>Response - an ID number that uniquely identifies this response</li>
+<li>Date - the date and time that the response was received</li>
+<li>Member - the user who submitted the response, if known</li>
+<li>Version - the language/version of the form that was used</li>
+<li>all questions on the form are shown in the remaining columns</li>
+</ol>
+
+<p>This information can be exported to Excel using the link at the end
+of the report, or directly from the form overview using the
+<u>export</u> button.</p>
+
+<p>Alternativly, use the <u>stats</u> button to see an overview of 
+all responses, with charts showing the proportion of respondents who provided
+different answers.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name=questions></a><h3>Manage the questions on the form</h3>
+
+<p>From the questions button in the <a href='#form'>general form
+overview</a>, you can get a table summarizing the questions on the
+form:</p>
+
+<p><img src='help2.png' border=1></p>
+
+<ul>
+<li>Click the question name to <a href='#confquestion'>reconfigure the 
+question</a> itself.</li> 
+<li>Click the up/down arrows to change the order of the questions.</li>
+<li>Click the + add question link to add a new question to the form.</li>
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='confquestion'></a><h4>Configure question</h4>
+
+<p>NOTE: the particulars of question phrasing, answer format, and so
+on are managed in your question libraries, not here. This is where you
+configure the question attributes that apply to
+<em>this form only</em>. If you want to change the general question details
+(on all forms that use it), you should use the link at the bottom to
+jump to the appropriate model question in your question bank.</p>
+
+<p>A preview of the question is displayed at the top of the screen.
+You can also delete the question from the form, using the button here.</p>
+
+<p>The question parameters than can be changed on this form are:</p>
+
+<ul>
+<li>Model question - use this to change the actual question that gets asked.
+Since this doesn't change the answers that have been received so far, you 
+might end up with odd answers in your responses, unless the questions are
+similar enough to be interchangeable. Otherwise, consider deleting the
+question and its answers, and simply creating a new question to replace 
+it.</li>
+<li>Flags</li>
+<ul>
+<li>required - check if the user must provide an answer to this question 
+before the response will be accepted.</li>
+<li>placeholder - if you have a preset value (below), that value will be
+shown until the form field gets input focus. Then the placeholder value
+will disappear to accept the real input. This can be used to provide 
+hints about formatting or types of input values that are sought. Placeholders
+are an HTML 5 feature, and are not supported on some browsers.</li>
+</ul>
+<li>Short Reference - this is used to name the input field in templates. 
+Note that the question may already have a short reference name, as defined
+in the library, but you can override that name here if you want.</li>
+<li>Preset Value - this is used to prepopulate the input field.</li>
+<li>Sort Key - this is used to order the questions. You can set it 
+explicitly here, or just use the arrows in the <a href='#form'>form 
+overview</a> to change it automatically.</li>
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='rmquestion'></a><h4>Remove question</h4>
+
+<p>To remove the question from the form, click the Remove button. 
+This will also remove any answers to that question that were received.</p>
+
+<p>To restore the question to the form, without the original answers,
+simply add the question back in the normal way. To undo the removal, and
+restore all the removed answers as well, go to the Trash tool and restore
+the question from there.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='newquestion'></a><h3>Add new questions to the form</h3>
+
+<p>At the bottom of the list of questions in the <a href='#form'>form
+overview</a> is a link to add a new question to the form. Clicking
+this link brings you to a list of all known questions in your question
+libraries, grouped by library. Simply click on a question to add it to
+your form.</p>
+
+<p>Repeat this procedure as many times as required to create the
+complete form.</p>
+
+<p>If the desired question is not available, you can create it by
+clicking on the add a new question links at the bottom of each
+library's list of questions.</p>
+
+<p>Note that question libraries will not be offered to you if the
+library type and the form type do not match. To make a one-time
+exception, <a href='#confform'>change your form type</a> to match the
+library type temporarily to add the question, then change it back to
+the correct value.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='confform'></a><h3>Configure the basic form behaviour</h3>
+
+<p>You can change the basic form beviours in the configure pane. This
+brings up the same questions you answered when you <a href='#newform'>created 
+the form</a>.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='libraries'></a><h2>Question Libraries</h2>
+
+<p>Question libraries are for storing and organizing the questions that 
+you will be using and re-using on various forms.</p>
+
+<p>Creating a new question library is simple:</p>
+<ul>
+<li>Click the <u>create new library</u> link</li>
+<li>Enter a name for the library (eg. "Contact Information")</li>
+<li>Optionally provide a type of form that this library's questions will
+be used for. If you select a type (other than "other"), then you will only
+be able to choose these questions on forms that are also of that type.</li>
+</ul>
+
+<p>Select one of the libraries to manage the questions in it.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='qbank'></a><h3>Manage your question bank</h3>
+
+<p>Your bank of reusable questions is organized into multiple libraries. 
+The questions in each library are listed in a table, with a link to add
+a new question to this library.  Click on one of the questions to review 
+it in detail.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='editquestion'></a><h4>Configure/edit question</h4>
+
+<p>When reviewing a model question, you have five panes that can be 
+expanded or collapsed:</p>
+
+<ol>
+<li>Preview - shows you what the question will look like to a viewer.</li>
+<li>Details - summarizes information about the question.</li>
+<li>Translations - shows the translations into your supported languages.
+Click on a translation to update it.</li>
+<li>Edit - allows you to edit/reconfigure the question. Warning: this will
+affect the question everywhere it is used.</li>
+<li>Delete - discards the question from your library.  Warning: if the 
+question is in use by any forms, this will also change the forms and 
+responses.</li>
+</ol>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='translations'></a><h4>Update translations</h4>
+
+<p>If you click on one of the translations you will be taken to a
+screen where the translations can be updated.  The default (English)
+version is shown at top, and the translated versions below.  If no
+translation exists, the English version will be shown in its place. 
+Simply replace or edit this to provide a proper translation.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='delquestion'></a><h4>Delete question</h4>
+
+<p>Deleting the question moves the question to the trash, along with
+any instances of the question in forms, and their answers. This may damage
+active forms and responses. The forms that are using this question are 
+shown to you so that you can decide whether deleting the question is safe.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='newbase'></a><h3>Create New Questions</h3>
+
+<p>To add a new question to a library so that it is available for use
+in your forms, click the <u>+ create new question</u> link at the end
+of the list of questions in the library. You must specify:</p>
+
+<ul>
+<li>Short Reference Name - used in <a href='#layout'>custom templates</a>. 
+The short name should be only alphanumeric characters with no spaces.</li>
+<li>Question/Prompt - the question text that is shown to the user.</li>
+<li>Input Format - the type of answer that is needed, one of:</li>
+<ul>
+<li>string - a single-line text input</li>
+<li>textarea - a multi-line text input</li>
+<li>select - a drop-down option selector</li>
+<li>multiselect - a multiline option selector, in which more than one line 
+can be selected</li>
+<li>radio - a list of checkboxes, only one of which can be selected at a 
+time</li>
+<li>radio+other - a radio input that includes an "Other:" box that can be 
+used to enter an option that was not offered.</li>
+<li>checkbox - a single checkbox</li>
+<li>checklist - a list of checkboxes, more than one can be selected at
+a time</li>
+<li>checklist+other - a checklist that includes an "Other:" box that can be 
+used to enter an option that was not offered.</li>
+<li>password - a text input whose data will be masked when you type it</li>
+<li>hidden - an input field that is not displayed visibly in the form,
+and which cannot be modified. The value of this input can be set in the 
+input responses field (below).</li>
+<li>label - this is not really an input. The question and input responses
+(which can contain arbitrary HTML) will be inserted into the form, but 
+do not have any functional purpose. This can be used to add help text or
+other formatting in the form.</li>
+</ul>
+<li>Size - this sets the size of the input field. For text inputs, it is 
+the number of characters wide. For textarea inputs, it is the number of 
+characters that should be visible (the number of rows/lines is computed 
+from this depending on the default width of a textarea input). For 
+multiselects, it is the number of rows that should be shown at once.</li>
+<li>Input Responses - this sets the type of input values that will be 
+accepted into this field. For selects, radios, and checklists, it is a 
+list of values separated by the bar character "|", such as 
+<code>yes|no</code>. For regular text inputs, it is an ExSite datatype
+that will define a regular expression the answer should match 
+(eg. "email" or "url").</li>
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='layout'></a><h2>Form Layout and Templates</h2>
+
+<p>Forms will automatically be given a simple and versatile layout. If
+you need to customize this layout, you can create a custom form
+template as follows.</p>
+
+<p>Your template is a block of HTML containing merge codes with the
+following format:</p>
+
+<pre>
+[[<em>name</em>:prompt]]
+[[<em>name</em>:input]]
+</pre>
+
+<p>where <em>name</em> is the short reference name of the question. For example,
+if you are prompting for an email address, the short reference name of
+the field may be <code>email</code>, and you can use the following merge 
+codes in the template:</p>
+
+<pre>
+[[email:prompt]]
+[[email:input]]
+</pre>
+
+<p>Where ever you place <code>[[email:input]]</code> in your template, 
+this will be replaced with the input field, such as 
+<code>&lt;input ...&gt;</code>. Where ever you place 
+<code>[[email:prompt]]</code> in your template, this will be replaced 
+with the question itself, such as <em>Enter your email address:</em></p>
+
+<p>You do not need to include the prompt merge code in the template. Instead,
+you could explicitly place the question text (or an image) into the template
+HTML, instead. If you do not include the input merge code in the template, the
+question will automatically be appended to the bottom of the template.</p>
+
+<p>Some inputs consist of multiple related input fields; for example
+checklists and radio buttons have numerous inputs that are presented
+in a row. If you want to place these sub-inputs individually, they are
+numbered starting at 1, and you can place them individually using:</p>
+
+<pre>
+[[<em>name</em>:input:N]]
+</pre>
+
+<p>where N is the number of the sub-input. Note that this only places
+the sub-input, not any text that goes along with the sub-input.</p>
+
+<p>Once you have your block of template HTML, save it to a content
+object somewhere in your website. (For instance, create a content
+object called <code>registration_form_template</code> and place this
+into a convenient content library.) Then type the name of this content
+object into the template field of the form configuration
+screen. ExSite will then attempt to find this named template and use
+it to format your form.</p>
+
+<a name='autolayout'></a><h3>Automatic Layout</h3>
+
+<p>The default layout gives you a plain but legible layout that will
+suffice for basic tasks. You can switch a richer CSS-based layout with
+the following configuration setting:</p>
+
+<pre>
+template = 1
+</pre>
+
+<p>With this setting, you can enhance your form styles using the
+following CSS classes:</p>
+
+<table>
+<tr><th>CSS class</th><th>description</th></tr>
+<tr><td><code>div.QA_prompt</code></td><td>Wraps the question prompts/labels.</td></tr>
+<tr><td><code>div.QA_input</code></td><td>Wraps the question input field.</td></tr>
+<tr><td><code>div.QA_question</code></td><td>Wraps the prompt + input.</td></tr>
+<tr><td><code>div.A, div.B</code></td><td>Wraps alternating questions.</td></tr>
+</table>
+
+<p>The last CSS classes (<code>div.A, div.B</code>) are optional. 
+You can enable alternate row highlighting using the following conf
+setting:</p>
+
+<pre>
+highlight_rows = 1
+</pre>
+
+<p>When possible, the system will try to enhance your form layout by
+grouping questions with similar inputs. For example, if you have three
+questions in a row with the same set of radio button answers, then
+instead of the default layout, which would be:</p>
+
+<div style="padding:10px; background-color:#eee; border:1px dotted #666;">
+<p>Question 1<br>
+( )A ( )B ( )C</p>
+<p>Question 2<br>
+( )A ( )B ( )C</p>
+<p>Question 3<br>
+( )A ( )B ( )C</p>
+</div>
+
+<p>the system will reformat to present these questions as:</p>
+
+<div style="padding:10px; background-color:#eee; border:1px dotted #666;">
+<table cellspacing=5>
+<tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+<tr><td>Question 1</td><td>( )</td><td>( )</td><td>( )</td></tr>
+<tr><td>Question 2</td><td>( )</td><td>( )</td><td>( )</td></tr>
+<tr><td>Question 3</td><td>( )</td><td>( )</td><td>( )</td></tr>
+</table>
+</div>
+
+<p>This helps to automatically group similar questions in surveys and
+other long forms, to keep things more organized. To take advantage of
+this feature, simply make sure that these questions are adjacent to
+each other in the form. If you have adjacent questions that you do not
+want grouped in this way, put a label or preformatted question in
+between them.</p>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='security'></a><h2>Form Security</h2>
+
+<p>In the form configuration, you have a few security options to
+control who may use the form.</p>
+
+<dl>
+
+<dt><strong>members-only</strong></dt>
+<dd>If selected, you must be logged in to the website to use this form.</dd>
+
+<dt><strong>confirmation screen</strong></dt>
+<dd>If selected, the form does not actually get processed when you submit.
+Rather it echoes your inputs, and asks you to confirm them. This provides 
+a helpful proof-reading check, and can also sometimes block the occasional
+robot that likes to fill out forms with random info to see what is 
+behind them.</dd>
+
+<dt><strong>captcha</strong></dt>
+<dd>If selected, the user must solve a CAPTCHA to submit the form. This
+is a puzzle, typically requiring the user to correctly transcribe an image
+of distorted text.</dd>
+
+<dt><strong>robot counter-measures</strong></dt>
+<dd>If selected, the form will include a few additional tricks designed
+to prevent abuse by automated robots that like to fill out forms for
+illicit purposes. This can help to reduce spam or other automated abuses 
+of your forms.</dd>
+
+<dt><strong>single-submission only</strong></dt>
+<dd>If selected, the form will not accept responses from members who
+have already submitted a response. The form must also be marked as members-only
+for this to work, otherwise this option will be ignored.</dd>
+
+</dl>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='reply'></a><h2>Reply Messages</h2>
+
+<p>By default, when a form is successfully submitted, the system will return 
+a simple "Thank You". You can specify a custom reply message in the form
+configuration screen.</p>
+
+<p>The custom reply message can include HTML mark-up, and also merge fields
+that will be replaced with appropriate data when displayed to the user.
+Merge fields are written like this: <code>[[name]]</code>, where <em>name</em>
+is any of:</p>
+
+<ul>
+
+<li> short reference name of any field in the form - this will be replaced
+with the actual answer provided by the user in that field. For example:
+<code>Thank you for your input, [[first_name]].</code></li>
+
+<li> <em>_date</em> - this will be replaced with the date and time the
+response was received.</li>
+
+<li> <em>_summary</em> - this will be replaced with the complete set of 
+answers that the user provided, in a table format.</li>
+
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<a name='custom'></a><h2>Customizing Response Handling</h2>
+
+<p>The default response handling of a form is:</p>
+
+<ol>
+<li>save the response to the database</li>
+<li>email the response to any email addresses listed in the 
+"Notification Email To:" field of the form configuration</li>
+<li>display the Acceptance Message to the user</li>
+</ol>
+
+<p>Any additional action or follow-up is the responsibility of the persons
+receiving the notification email.</p>
+
+<p>For simple data collection or survey-style forms, this is usually 
+sufficient. The data is accumulated in the database for later analysis
+and reporting.</p>
+
+<p>If you require special automated processing of the form data, there
+is a hook in the system for you to add your own code. Follow this 
+procedure:</p>
+
+<ul>
+<li>make sure your form has a name</li>
+<li>in your <code>myConfig.pm</code> file, add a handler for <code>QA_receipt</code></li>
+<li>in the same file, add your custom code in your handler routine</li>
+</ul>
+
+<p><a href='#top'>[top]</a> <a href='#toc'>[TOC]</a></p>
+<h3>Example Custom Response Handler</h3>
+
+<pre>
+# in myConfig.pm
+
+sub my_handlers {
+    my $this = shift;
+
+    # install a handler for QA forms
+
+    $this->handler("QA_receipt",\&my_qa_receipt);
+}
+
+sub my_qa_receipt {
+    my ($this,$form,$response) = @_;
+
+    # $form is a QA form object
+    # $response is a QA response object
+
+    # the return value from this routine is assumed to be an HTML
+    # message that is displayed to the user
+    my $output_message;
+
+    # to take action on specific forms, you need to check the form name
+    my $formname = $form->getdata("name");
+    if ($formname eq "my_registration_form") {
+
+        # fetch the response data as a hash of short reference name => answer
+
+	my %response_data = $response->get_response_data();
+
+	# ... perform any special functions that are needed based on 
+	# the response data
+
+    }
+
+    # return any status messages to be displayed to the user
+    return $output_message;
+}
+</pre>

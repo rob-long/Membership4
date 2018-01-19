@@ -1,0 +1,145 @@
+<h1>Point of Sale</h1>
+
+<p>The <i>Point of Sale (POS)</i> app allows you to manually create invoices
+for any type of sale. You can also use it to edit existing invoices.</p>
+
+<h2>Selecting an Account</h2>
+
+<p>To begin, you must have a customer account to work with. You can
+search for an existing account, using the search form, or you can
+click on the New Account tab and create a new account if the customer
+does not yet exist in your system.</p>
+
+<h2>Selecting an Invoice</h2>
+
+<p>Next you must have an invoice to add charges to. You can select an
+existing invoice from the account statement to edit a previous sale, 
+or you can select the New Sale tab to begin a new invoice.</p>
+
+<p>If selecting an existing invoice, the system will complain if it is
+already active and you attempt to modify it. This is because you can create 
+auditing problems and imblances if you modify sales that have already 
+completed. For example:</p>
+
+<ul>
+<li> If payments have been received, they will no longer match the amount owed.</li>
+<li> Taxes will get recalculated, possibly differently than before.</li>
+<li> You will obscure the history of what really happened with this invoice.</li>
+</ul>
+
+<p>In such cases, you may be better off creating a new invoice with
+the adjustments, rather than edit an existing invoice.</p>
+
+<p>If you want issue a refund, it is better not to modify the original
+invoice, but rather to <a href="#refunds">issue a new refund invoice</a>.</p>
+
+<h3>New Sale</h3>
+
+<p>You do not have to use any of the advanced configuration options
+when creating a new invoice. But if you do:</p>
+
+<ul>
+
+<li> <b>Type</b> - <i>receivable</i> for a regular invoice to a
+client; <i>payable</i> for an invoice <u>from</u> a client or a
+refund <u>to</u> a client.</li>
+
+<li> <b>Description</b> - optional descriptive text that can be added
+to the invoice for clarification.</li>
+
+<li> <b>Status</b> - <i>inactive</i> for an invoice that is under
+construction; <i>advisory</i> for a completed invoice that is NOT
+included in financial reports. The other settings should not normally
+be used when setting up an invoice in the POS system.</li>
+
+<li> <b>Invoice Number</b> - Add a custom or 3rd-party invoice number
+here so that you can relate this invoice back to the original.</li>
+
+</ul>
+
+<a name="refunds"></a><h3>Refunds</h3>
+
+<p>If you select to refund an invoice, the POS tool will create a copy
+of that invoice, but set it to be a refund back to the
+customer. Everything on this invoice will be refunded. You need to
+revise it to accurately reflect what is being refunded. If it is a
+100% refund, simply accept it as-is. If it is a partial refund, first
+modify it as follows:</p>
+
+<ul>
+<li>Remove items that are NOT being refunded (including taxes).</li>
+<li>For quantity refunds, change the quantity to the number being returned/refunded.</li>
+<li>For partial refunds, change costs to the amount being refunded.</li>
+<li>To add an admin fee, add a line item with a NEGATIVE amount to reduce the refund total.</li>
+<li>Include taxes/surcharges on the invoice if you want to manually force those values. Clear taxes off the invoice if you want them recomputed automatically. Note that for refunds, it may be safer to manually force tax values, since tax rules can change between the time of sale and the time of refund.</li>
+</ul>
+
+<p>These operations are performed the same as for regular sales, as
+described below.</p>
+
+<h2>Revising an Invoice</h2>
+
+<p>You can edit or delete individual line items on an invoice. You can
+also add new line items. When editing or adding line items, you are
+prompted for the following fields:</p>
+
+<table border=1>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Item</td><td>the item being purchased</td></tr>
+<tr><td>Description</td><td>additional purchase details</td></tr>
+<tr><td>Quantity</td><td>number, weight, or volume being purchased</td></tr>
+<tr><td>Unit Size</td><td>the size of 1.0 units of the item. The size unit may be a weight, volume, or other.</td></tr>
+<tr><td>Unit Cost</td><td>the cost of 1.0 units of the item</td></tr>
+<tr><td>Accounting Code</td><td>how the item is categorized among purchases</td></tr>
+<tr><td>Note</td><td>administrator notes (not shown to buyer)</td></tr>
+<tr><td>Type</td><td>the item type code, if any</td></tr>
+<tr><td>ID</td><td>the item ID code, if any</td></tr>
+</table>
+
+<h3>Recalculation of Surcharges</h3>
+
+<p>Surcharges (taxes, shipping, etc.) will automatically be
+recalculated and added to the invoice when you close the sale. If
+these are being calculated correctly, you do not need to do anything
+except finish the sale.</p>
+
+<p>If these are being calculated incorrectly, then you can do one of
+the following:</p>
+
+<ul>
+
+<li>Edit the appropriate line items and change the accounting
+code. Each accounting code has specific surcharge rules attached to
+it. You can either change it to a more appropriate accounting code to
+get a different set of rules, or you can un-set the accounting code to
+get no rules.</li>
+
+<li>If the correct rules are not in place, then you should first add
+or correct the rules using the Billing Adjustments module.</li>
+
+</ul>
+
+<p>If surcharges are added manually, then the POS module will not add
+surcharges when the sale is closed. To do this, set the "Surcharge"
+field in the item details to indicate which surcharge you are
+adding. For example, to add a manually-calculated HST amount, set the
+item name to HST, enter the cost, set the Accounting Code to taxes,
+and set the Surcharge field to HST. (If there are multiple
+similar-looking options, it does not really matter which one you
+choose.) You must enter all surcharges that need to be on the
+invoice.</p>
+
+<h3>Finishing the Sale</h3>
+
+<p>When you finish the sale, the invoice is frozen (further changes
+are locked out), and surcharges such as taxes are added to give the
+final total. The invoice is left on the customer's account as an
+amount owing, which can be paid later.</p>
+
+<p>If you are also collecting full payment at this time, you can
+record the payment at the time the sale is closed. Select the payment
+method, and include an optional note.</p>
+
+<p>If recording a partial payment or other irregular change, you can
+use the Pay module instead, which has more general-purpose account
+management functions.</p>

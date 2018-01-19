@@ -1,0 +1,3 @@
+type	tag	regexp
+list:quiz_input_format	select	radio|select|short text|long text|checkbox|hidden|label|preformatted
+#list:quiz_input_format	select	radio|select|short text|long text|checkbox|hidden|label|preformatted|number|range

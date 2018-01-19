@@ -1,0 +1,267 @@
+<h1>My Website</h1>
+
+<p><i><b>My Website</b></i> provides a simple 
+and friendly way to manage your web page content.</p>
+
+<p>Your website control panel opens with a site map of all of your
+pages, and page-like locations (such as blogs and calendars),
+organized into their menus and sub-menus. Use the arrows at the left
+to expand/contract submenus. Your current active pages are shown with
+bold text; others are shown greyed-out. Click on the
+page name to open up a <a href="#page">smaller control panel just for
+that page</a>.</p>
+
+<a name=site></a><h2>Website Management Tools</h2>
+
+<p>Above the site map are some general options for your website in general:</p>
+
+<ul>
+
+<li>configure site - use this to set your site title and
+URL. <span class=error>Do not change your URL casually! You must also
+update your webserver configuration to recognize this URL.</span> You
+can also specify a description here, which can be helpful for some
+search engines.</li>
+
+<li>new page - this adds a new page into your site map. It will be
+blank to start with.</li>
+
+<li>change menu oder - this jumps to the <b>Menu</b> module, which allows you
+to re-order your pages and menu structure.</li>
+
+<li>photos - this jumps to the <b>Photo Albums</b> module, which
+allows you to manage your images.</li>
+
+<li>documents - this jumps to the <b>Documents</b> module, which
+allows you to manage your documents, and other downloadable files.</li>
+
+<li>publish - this takes all of your changes live. Use this after you
+are done with your edits. <span class=warn>If you do not publish, the
+public will not see your changes.</span></li>
+
+</ul>
+
+<a name=page></a><h2>Page Overview</h2>
+
+<p>After clicking on a page name, a smaller control panel will open to
+inspect and manage that page. Click on the X or anywhere outside this
+control panel to return to the main website control panel.</p>
+
+<p>A <a href="#pagetools">toolbar to manage the page</a> is shown at top,
+followed by information about the page underneath:</p>
+
+<ul>
+
+<li>Type - for example, page, blog, calendar, etc.</li>
+
+<li>Status - should be <span class=help>published</span> for active
+pages, but may be set to something else for old out of date pages, or
+new pages that haven't been published yet.</li>
+
+<li>Language - the language of the page, for multi-lingual sites. For
+single language sites, this will be blank.</li>
+
+<li>Menu label - this is how the page appears in menu links.</li>
+
+<li>Path - this is how the page appears in the URL, after the domain name.</li>
+
+<li>URL - the full address of the web page. Click here to go to the
+webpage as it currently appears to the public.</li>
+
+</ul>
+
+<p>For non-page locations, like blogs and calendars, it will also
+offer a link to manage their contents (ie. the posts to a blog, and
+the events in the calendar). Editing a blog or calendar directly using
+My Site will edit <i>preamble</i> text that will be displayed above
+the posts, but will not edit the individual posts or events
+themselves.</p>
+
+
+<a name=pagetools></a><h2>Page Management Tools</h2>
+
+<ul>
+<li><a href="#preview">preview</a></li>
+<li><a href="#edit">edit</a></li>
+<li><a href="#pconf">configure</a></li>
+<li><a href="#publish">publish</a></li>
+<li><a href="#rollback">rollback</a></li>
+<li><a href="#delete">delete</a></li>
+</ul>
+
+<a name=preview></a><h3>Previewing Pages</h3>
+
+<p>Click the preview tool to open up a preview of your page in a new tab/window.</p>
+
+<p>As the site administrator, you will see the editable region of
+content highlighted by a dashed red line.  At the bottom of the
+editable region is an edit button.  Click this button
+to <a href=#edit>edit</a> the outlined content.  (Regular website
+users will not see the dashed line or edit button.)</p>
+
+<p>To return to the control panel, simply close the preview window or
+click the "done" button.</p>
+
+<p class="error">Do not copy/paste or use the web address of the
+preview page. It is an administrator preview, and will not work for
+regular website visitors. Instead, copy the URL from the <a href="#page">page
+information</a> on the control panel.</p>
+
+<a name=edit></a><h3>Editing Pages</h3>
+
+<p>There are two ways to edit a web page:</p>
+
+<ol>
+<li> click on the edit tool in the control panel.</li>
+<li> <a href="#preview">preview the page</a>, and then click on the edit button at the bottom of the page.</li>
+</ol>
+
+<p>In either case, the web page is displayed in a separate window,
+with the content region replaced by a full <a href="#editor">HTML
+editor</a>, which you can type into to make your changes.</p>
+
+<p>When done making changes, click on the "Submit" button below the
+editor.  This will return to the page preview, and you should be able
+to see your new changes with the surrounding page style applied.  If
+everything looks good, click done, and you should find
+yourself back at your website control panel.</p>
+
+<p class=error><b>Warning:</b> if you click reload, or navigate away from 
+the page while editing, your changes so far will be lost.</p>
+
+<a name=publish></a><h3>Publish Page</h3>
+
+<p>When your are happy with your edits, publish them using the publish
+tool. This will publish that one page only.</p>
+
+<p>If you are making numerous changes, or you have created new pages
+that will change the menus on every page, it will be simpler to use
+the <a href="#site">website publish tool</a> when all your changes are
+ready.</p>
+
+<p>Because web browsers will cache pages, visitors may not see the
+changes immediately. A force-refresh will usually fetch the latest
+update.</p>
+
+<a name=pconf></a><h3>Configuring Pages</h3>
+
+<p>Use the page configuration tool to modify the setup of your web pages.</p>
+
+<ul>
+<li>title - this changes the title of the page</li>
+
+<li>name - this is the part of the URL address that refers to your
+page. It should consist of only letters, numbers, and punctuation
+characters like _ or -.</li>
+
+<li>label - this is used for links and menus</li>
+
+<li>parent - this positions the page under the selected page in the
+site map. It is a simple way to move your page around.</li>
+
+<li>template - use this to select a special graphic design that should
+be used for this page, if the default design is not appropriate.</li>
+
+<li>language - select the language of the page, if not the default (English)</li>
+
+<li>sortkey - this controls the order of the page, within its submenu.</li>
+
+<li>access - use this to set who may view this page. Anyone else will
+get a login form.</li>
+
+<li>hide from - you can keep this webpage out of menus, sitemaps, and
+search indexes by using these settings.</li>
+
+<li>publish rule - this controls if/how your page will be
+published. You do not need to set this, as a reasonable setting will
+be chosen automatically.</li>
+
+<li>status - <span class=help>published</span> pages are your
+website's normal, active pages. Everything else is disabled to varying
+degrees.</li>
+
+<li>description - this may be used by some search engines to describe this page.</li>
+
+<li>keywords - this may be used by some search engines to describe this page.</li>
+
+</ul>
+
+<a name=rollback></a><h3>Rollbacks</h3>
+
+<p>To undo changes that were made to a web page, use the rollback
+tool. This deletes the most recent revision of the content, and
+replaces it with the previous version on file.  (There is no preset
+limit to how many versions are saved, or how far you can roll
+back.)</p>
+
+<p>You should also <a href=#publish>re-publish</a> the page, or public
+viewers of the site will continue to see the old version.</p>
+
+<p class=error><b>Warning:</b> There is no "redo" function to undo a
+rollback.  Once you have rolled back, the lost revisions are put into
+the trash. They can be recovered from there, however.</p>
+
+<a name=del></a><h3>Deleting Pages</h3>
+
+<p>To remove a page from your site completely, click on the page delete 
+tool.</p>
+
+<p class=error>Deleting a page also deletes all the pages in the
+submenus underneath it. Deleting the home page will effectively delete
+THE ENTIRE WEBSITE. Although deleted items can be recovered from the
+trash, if you delete too much at once, you can overflow the trash, and
+the deleted items may no be recoverable.</p>
+
+<a name=editor></a><h2>HTML Editor</h2>
+
+<p>When editing pages, you have the use of a multi-function WYSIWYG
+HTML editor to assist you with formatting. It includes numerous
+word-processor like functions to set text styles, headings, lists,
+tables, links, images, and more.</p>
+
+<p class=error>The text style in the editor does not exactly match
+your website styles. You must submit to have the results displayed in
+your website's styles. Do not fuss with your layout too much, as it
+will look different on different types of screens and devices.</p>
+
+<h3>Adding Links</h3>
+
+<p>Use the link tool to add hyperlinks to your page. Highlight the
+text you want to serve as the link anchor, and then click the link
+tool to choose the link destination:</p>
+
+<ul>
+
+<li>URL - use this to link to 3rd-party web pages.</li>
+
+<li>Internal Page - select a page from your website. This link will work even
+if you move the page around or rename it.</li>
+
+<li>Image/Document - select a library, and any file in it to make a
+link directly to that download.</li>
+
+</ul>
+
+<h3>Inserting Media</h3>
+
+<p>Use the images tool to insert an image straight from one of your
+libraries or albums.</p>
+
+<p>If the image you want to display is not on your website, use the URL tab in the image dialog to specify an external image.</p>
+
+<p>If the image does not exist on your website yet, use the upload tab
+to put it there, before adding it to your page. When uploading an
+image, you can place it in the current page, or into a library if you
+think you might want to re-use it elsewhere.</p>
+
+<p>More complicated media (such as YouTube videos, SoundCloud audio,
+and other so-called <em>embeds</em>) can be inserted using
+the <b>Insert media</b> tool under the Insert menu.</p>
+
+<h3>Inserting Applications</h3>
+
+<p>Your website has special applications installed in it, many of
+which can be embedded into web pages. Select the application you want
+to embed using the <b>Insert Application</b> tool under the insert
+menu. Then choose the application you want to insert, and set any
+special options that the application wants.</p>

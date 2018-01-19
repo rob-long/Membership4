@@ -1,0 +1,4 @@
+type	tag	regexp
+list:ticket_status	select	active|inactive
+list:ticket_attendance	radio	present|not present
+list:ticket_claim_status	select	confirmed|reserved|waitlist|held|canceled

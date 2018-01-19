@@ -1,0 +1,127 @@
+h1 {
+    margin-top:0px;
+}
+a.popupLink {
+    font-weight:bold;
+    text-decoration:none;
+    padding:3px;
+    font-size:110%;
+}
+.hidden {
+    font-weight:normal !important;
+    color:#909;
+}
+.restricted {
+    color:red;
+}
+.inactive {
+    color:grey;
+}
+iframe.contentFrame {
+    width:100%;
+
+}
+div.contentPopup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width:600px;
+    margin: 20px auto;
+    border:1px #ccc solid;
+}
+div.contentPopup h2 {
+    margin-top:0px;
+    margin-bottom:5px;
+}
+div.MySiteHelp {
+    border:2px dashed grey;
+    border-radius:20px;
+    padding:25px;
+    width:300px;
+    text-align:center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+    margin-top:-50px;
+}
+div.MySiteHelp p:first-child {
+    font-size:130%;
+    color:grey;
+}
+
+.mfp-bg {
+  opacity: 0.0 !important;
+}
+
+.helppopupLink {
+    font-weight:bold;
+    color:#00c;
+    font-size:110%;
+}
+.helphidden {
+    font-weight:normal !important;
+    color:#909;
+    font-size:110%;
+}
+.helprestricted {
+    color:red;
+    font-size:110%;
+}
+.helpinactive {
+    color:grey;
+    font-size:110%;
+}
+.treeview .hover {
+    color:inherit;
+}
+table.pageInfo {
+    border:1px #ccc solid; 
+    border-collapse:collapse; 
+    width:100%;
+}
+table.pageInfo td, table.pageInfo th {
+    border:1px #ccc solid; 
+    padding:5px;
+}
+table.pageInfo th {
+    background-color:#eee;
+}
+
+ul.tv li a {
+    display:inline-block;
+    height:20px;
+}
+ul.tv ul li a {
+    padding-left:20px !important;
+    font-weight:bold;
+    background:url(page.png) no-repeat !important;
+}
+ul.tv ul li.contentCalendar a {
+    padding-left:20px !important;
+    background:url(calendar.png) no-repeat !important;
+}
+ul.tv ul li.contentBlog a {
+    padding-left:20px !important;
+    background:url(blog.png) no-repeat !important;
+}
+ul.tv ul li.contentCatalog a {
+    padding-left:20px !important;
+    background:url(catalog.png) no-repeat !important;
+}
+ul.tv li.contentSection a {
+    padding-left:20px !important;
+    font-weight:bold;
+    background:url(section.png) no-repeat;
+}
+ul.tv ul li.contentInactive a {
+/*    text-decoration:line-through;*/
+    color:grey;
+    font-weight:normal;
+}
+.listitem_details {
+    font-style:italic;
+    color:#aaa;
+}

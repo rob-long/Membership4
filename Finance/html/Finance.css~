@@ -1,0 +1,3 @@
+table.Report caption {
+	width:400px;
+}

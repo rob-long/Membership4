@@ -1,0 +1,30 @@
+a.delete {
+    color:red;
+}
+a.delete:hover {
+    background-color:red;
+}
+
+table.SecurityItem {
+    border:1px solid #666666;
+    border-collapse:collapse; 
+}
+table.SecurityItem th {
+     background-color:#808099;
+     border:1px solid #666666;
+}
+table.SecurityItem td {
+     vertical-align:top;
+     background-color:#ddddee;
+     border:1px solid #666666;
+}
+table.SecurityItem td.icon {
+    width:72;
+    background-color: #9999cc;
+}
+.WarningBox {
+    background-color:#FFCCCC;
+    border:1px solid red;
+    width:500px;
+    padding:10px;
+}

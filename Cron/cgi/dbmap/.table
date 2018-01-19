@@ -1,0 +1,2 @@
+table	alias	key	title	plural	report	read	insert	update	delete	search	index
+crontask	crontask	crontask_id	Scheduled Task	Scheduled Tasks	table	8	8	8	8	8

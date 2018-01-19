@@ -1,0 +1,87 @@
+<h1>Login</h1>
+
+<p>This plug-in provides a number of convenience tools for managing
+login state.</p>
+
+<h2>Public Webpages</h2>
+
+<p>When embedded into a normal webpage, the Login plug-in has the
+following behaviour:</p>
+
+<ul>
+<li> If the user is logged in, show their login ID if it can be determined, 
+and a link to logout</li>
+<li> If the user is not logged in, show a login form or login link, 
+depending on configuration</li>
+</ul>
+
+<p>When published onto static pages, the Login plugin inspects the
+cookie state to determine who the user claims to be, but it does not
+waste server resources validating this identity, since the page is
+public anyway. (If the identity is not valid, the user will fail to
+authenticate when they visit a real members-only page.)  When viewed
+on dynamic pages, however, the user's identity is validated before it
+is reported.</p>
+
+<p>Forms and links are wrapped in a div or span wrapper of CSS class
+"Login".  This may be used to style the login output appropriately.</p>
+
+<p>The Login plug-in accepts the following options, which can be
+encoded into a configuration file or passed in the plugin tag:</p>
+
+<ul>
+<li> <b>goto</b>: a page ID to direct the user to when they follow a
+login link (eg. a members welcome page).  If not specified, the user
+is returned to the current page.</li>
+
+<li> <b>goto_alt</b>: an alternate page ID to direct the user to when
+they click on their own username when they are already logged in
+(eg. a manage my account page).  If not specified, this goes to the
+same place as goto, above.</li>
+
+<li> <b>login</b>: the login link anchor text, eg. "Log in".</li>
+
+<li> <b>logout</b>: the logout link anchor text, eg. "Log out".</li>
+
+<li> <b>method</b>: "link" or "form"; link takes the user to a login
+page; form prompts the user directly for their login and password</li>
+
+<li> <b>name</b>: "name" to report the user's proper name; "login" to
+report the user's login name.  (On dynamic pages only;  on static pages,
+the login name only is reported.)</li>
+
+<li> <b>prefix</b>: text to place in front of the login ID, such as
+"You are logged in as:"</li>
+
+<li> <b>wrap</b>: "div" or "span"; the type of element to enclose the Login output in</li>
+
+</ul>
+
+<p>If using the "session" method of authentication, there is no
+information on the user's name or identity that is stored client-side,
+so the Login plugin can only report that the user is logged in, but
+not as whom.  Furthermore, this information is not sensitive to the
+expiry time of the session, so it may become invalid once a certain
+period of time has elapsed.</p>
+
+<h2>Administrator Control Panel</h2>
+
+<p>The Login Control Panel allows you to assume the identity of a regular
+website user.  The available user identities are listed.  (You can
+only switch to a user whose access level is less than your own.)</p>
+
+<p>To switch to a user, click on their name.  This effectively logs
+you in to the public side of the site.  A new window will open on the
+public site.  You should then be able to navigate into member-only
+areas as the user you selected.</p>
+
+<p><b>NOTE</b>: you are no longer logged in as the administrator once
+you do this.  Your admin windows/screens will still be open, however.
+If you attempt to use them, you are doing so as the new user.  This
+will result in "permission denied" errors, if the new user identity
+has no administration privileges, and possibly unexpected
+administration screens otherwise.  When you are done working as the
+new identity, you should log out, then refresh the admin screens to
+get a login screen.  This will let you return to your regular
+identity.</p>
+

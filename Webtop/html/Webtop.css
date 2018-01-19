@@ -1,0 +1,40 @@
+body {
+    background-color:#eeeeee;
+}
+div.ctrlpanel  { 
+  padding:0px 0px 0px 0px !important;
+}
+div.webtop {
+
+}
+.navbar {
+    margin-bottom:0px !important;
+}
+div.iconGroupA {
+    background-color:#dddddd;
+}
+div.iconGroupA div.icon:hover {
+    background-color:#ccc;
+}
+div.iconGroupA,div.iconGroupB {
+    padding-left:20px;
+    min-height:140px;
+    border-top:1px solid #bbb;
+    width:100%;
+}
+div.iconGroupA h2,div.iconGroupB h2 {
+    color:#444;
+    font-size:12px;
+    font-weight:bold;
+    margin:0px;
+    padding-top:10px;
+}
+.iconGroupA:after,.iconGroupB:after {
+    content: ".";
+    display: block;
+    height: 0;	
+    font-size:0;
+    clear: both;
+    visibility:hidden; 
+}
+

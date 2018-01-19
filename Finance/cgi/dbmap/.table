@@ -1,0 +1,8 @@
+table	alias	key	title	plural	report	read	insert	update	delete	search	index	class
+account	account	account_id	Account	Accounts	table	7	7	7	8	7	section_id;uid	Modules::Finance::Account
+receivable	receivable	receivable_id	Receivable	Receivables	table	7	7	7	8	7	account_id	Modules::Finance::Receivable
+receivable_item	receivable_item	receivable_item_id	Receivable Item	Receivable Items	table	7	7	7	8	7	receivable_id	Modules::Finance::ReceivableItem
+surcharge	surcharge	surcharge_id	Surcharge	Surcharges	table	7	7	7	8	7		Modules::Finance::Surcharge
+payment	payment	payment_id	Payment	Payments	table	6	6	6	8	6	account_id;receivable_id	Modules::Finance::Payment
+acctcode	acctcode	acctcode_id	Sales Type	Sales Types	table	8	8	8	8	8		Modules::Finance::Acctcode
+glcode	glcode	glcode_id	GL Code	GL Codes	table	5	8	8	8	8

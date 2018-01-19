@@ -1,0 +1,247 @@
+div.boxpane:after {
+    content: ".";
+    display: block;
+    height: 0;	
+    font-size:0;
+    clear: both;
+    visibility:hidden; 
+}
+
+table.feeOverview {
+    float:left;
+}
+
+a.pathFee {
+    padding-left:25px !important;
+    display:block;
+    background:url(fee.png) no-repeat 5px 7px;
+}
+a.pathEvent {
+    padding-left:25px !important;
+    display:block;
+    background:url(event.png) no-repeat 5px 7px;
+}
+span.priceCost {
+    color:green;
+}
+/* span.priceCost {
+    padding:3px 5px;
+    background-color:#900;
+    color:white;
+    border-radius:2px;
+}
+table.Report span.priceCost {
+    padding:0px;
+    background-color:inherit;
+    color:black;
+    border-radius:0px;
+} */
+div.FeeRegistrationForm {
+    border:1px dotted grey;
+    padding:10px;
+    background-color:white;
+}
+div.FeeAbout {
+    margin-bottom:10px;
+}
+
+/* event schedule */
+
+table.eventSchedule {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+table.eventSchedule caption {
+    font-weight:bold;
+    font-size:125%;
+    text-align:left;
+}
+table.eventSchedule td {
+    padding-right:15px;
+}
+
+/* feeIndex */
+
+.feeIndex {
+    border-top:1px grey dotted;
+    margin-top:10px;
+    margin-bottom:10px;
+    max-width:750px;
+}
+.feeIndex .FeeSummary {
+    border-bottom:1px grey dotted;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.feeName {
+    font-weight:bold;
+}
+.feeBuyInfo {
+    float:right;
+}
+
+/* roster */
+
+.TicketNameCanceled {
+    text-decoration:line-through;
+}
+.TicketConfirmed,.TicketReserved {
+    color:green;
+}
+.TicketWaitlist, .TicketHeld {
+    color:#c90;
+}
+.TicketCanceled {
+    color:red;
+}
+.TicketInactive {
+    color:grey;
+}
+
+a.rosterOptions {
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    border-radius:3px;
+    padding:4px 8px 4px 25px;
+    display:block;
+    width:100px;
+    margin-bottom:5px;
+    background:url(report.png) no-repeat 5px 3px #666;
+}
+
+/* Registration */
+
+.CurrentRegistrant, .NewRegistrant {
+    border:1px dotted grey;
+    background-color:white;
+    padding:20px;
+    margin-bottom:10px;
+}
+
+a.feeLink {
+    display:inline-block;
+    text-align:center;
+    padding:2px 4px;
+    margin-left:10px;
+    border:1px solid grey;
+    border-radius:2px;
+    color:#666 !important;
+    text-decoration:none;
+    font-size:80%;
+}
+a.feeLink:hover {
+    color:black;
+    border-color:black;
+    background-color:#eee;
+    text-decoration:none;
+    font-size:80%;
+}
+.ticketStatus {
+    display:block;
+}
+.ticketPurchase {
+    display:block;
+    font-size:80%;
+}
+
+/* Tickets */
+
+div.Ticket { 
+    border:2px black dashed;
+    margin-bottom:10pt;
+    max-width:600px;
+    background-color:white;
+}
+.Ticket a {
+    text-decoration:none;
+}
+.ticketInfo {
+    display:inline-block;
+    text-align:right;
+    float:right;
+    font-size:120% !important;
+}
+.ticketNumber {
+    font-family:monospace;
+    size:120% !important;
+    font-style:bold;
+}
+.feeInfo {
+    display:inline-block;
+    font-size:120% !important;
+}
+.ticketName {
+    font-size:200%;
+    font-style:italic;
+    color:grey;
+    margin-bottom:15px;
+}
+.ticketHead {
+    padding:10px;
+    border-bottom:1px dotted black;
+}
+.ticketBody {
+    min-height:256px;
+    padding:10px;
+}
+#qrcode {
+    float:right;
+}
+.Ticket .eventTitle {
+    font-style:bold;
+    font-size:140%;
+}
+.ticketEvent {
+    margin-bottom:15px;
+}
+.locationAddress {
+    color:grey;
+    font-size:80%;
+    margin-bottom:15px;
+}
+.Ticket .ticketStatus {
+    font-size:150%;
+    background-color:#c00;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    display:inline-block;
+}
+
+/* cart */
+
+
+table.Receivable { 
+        border:1px #2c435b solid; 
+        border-collapse:collapse; 
+	margin-bottom:10pt;
+}
+table.Receivable td { 
+        margin:0px; 
+        border-left:1px #2c435b dotted; 
+        padding:4px; 
+}
+table.Receivable tfoot { 
+        margin:0px; 
+        border-top:1px #2c435b dotted; 
+        padding:4px; 
+}
+table.Receivable tfoot td { 
+        margin:0px; 
+        border-left:0px white solid;
+        padding:4px; 
+}
+table.Receivable th { 
+        border:1px #2c435b dotted; 
+        margin:0px; 
+        padding:4px; 
+        background-color:#97b9dc;
+	font-weight:bold; 
+	font-size:10px; 
+	color:black;
+}
+.number {
+	text-align:right;
+}
+

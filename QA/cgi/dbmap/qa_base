@@ -1,0 +1,11 @@
+column	datatype	size	label	display	read	write	search	validate
+qa_base_id	key#	0	ID	full	5	9	no	hard
+qa_lib_id	key:qa_lib	0	Library	brief	5	5	yes	hard	
+label	string	255	Question/Prompt	key	5	5	yes	soft
+format	list:qa_format	40	Input format	brief	5	5	yes	soft
+name	variable_name	255	Short Reference Name	brief	5	5	yes	yes
+size	int	0	Size	full	5	5	no	yes
+value	text	2000	Input responses	full	5	5	yes	no
+#correct_value	string	255	Correct Answer	full	5	5	no	no
+mtime	timestamp	0	Last Modified	full	5	9	no	no
+ctime	timestamp	0	Created	full	5	9	no	no

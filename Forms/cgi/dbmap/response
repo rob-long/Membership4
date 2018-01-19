@@ -1,0 +1,7 @@
+column	datatype	size	label	display	read	write	search	validate
+response_id	key#	0	ID	key	5	9	no	hard
+form_id	key:content	0	Form	brief	5	5	yes	soft
+uid	key=user	0	User	brief	5	5	yes	yes
+language	list:language	40	Language	brief	5	5	yes	yes
+note	text	250	Notes	brief	5	5	yes	no
+ctime	timestamp	0	Date	brief	0	9	no	no

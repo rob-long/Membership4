@@ -1,0 +1,34 @@
+@import url(../AddrBook/AddrBook.css);
+@import url(../Content/Content.css);
+
+.profilePath, .profilePath a {
+   font-size:small;
+   padding-bottom:10px;
+   color:grey;
+   text-decoration:none;
+}
+.profilePhoto {
+   float:right;
+   padding-left:20px;
+   padding-bottom:15px;
+}
+.profileAttachments {
+   margin-top:20px;
+   margin-bottom:20px;
+   border-top:dotted 1px grey;
+   border-bottom:dotted 1px grey;
+   padding-top:10px;
+   padding-bottom:10px;
+}
+.profilePath {
+   display:none; /* hide on admin screens */
+}
+.Profile:after {
+    content: ".";
+    display: block;
+    height: 0;	
+    font-size:0;
+    clear: both;
+    visibility:hidden; 
+}
+

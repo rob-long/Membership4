@@ -1,0 +1,321 @@
+<h1>Billing Adjustments &amp; Surcharges</h1>
+
+<p>A surcharge is an <b>adjustment</b> to the total of an invoice,
+whether positive (add-on cost) or negative (discount). Examples of
+surcharges include:</p>
+
+<ul>
+<li>sales taxes</li>
+<li>shipping &amp; handling fees</li>
+<li>sales/promotions</li>
+<li>quantity discounts</li>
+<li>coupon code discounts</li>
+<li>conditional discounts (buy X, get a discount on Y)</li>
+</ul>
+
+<h2>Contents</h2>
+
+<ul>
+<li><a href=#tax>Tax Rules</a></li>
+<li><a href=#coupon>Coupon Codes</a></li>
+<li><a href=#config>Other Surcharges</a></li>
+<li><a href=#adjust>Cost Adjustment</a></li>
+<ul>
+<li><a href=#discount>Discounts</a></li>
+</ul>
+<li><a href=#region>Surcharge Regions</a></li>
+<li><a href=#date>Surcharge Dates</a></li>
+<li><a href=#cond>Surcharge Conditions</a></li>
+<li><a href=#acctcode>Sales Codes</a></li>
+</ul>
+
+<a name=tax></a><h2>Tax Rules</h2>
+
+<p>You can quickly add a tax rule under the <b>+ Tax</b> tab.</p>
+
+<dl>
+
+<dt><b>Tax Name</b></dt>
+<dd>This is how the tax will be described on the invoice.</dd>
+
+<dt><b>Tax Region</b></dt>
+<dd>A list of the provinces or states in which this tax will be charged.
+Use the 2-letter province/state codes, and separate them with a bar character,
+'|'.</dd>
+
+<dt><b>Tax Country</b></dt>
+<dd>The country in which this tax will be charged. It is not necessary to 
+specify both this and the region, since one usually implies the other.
+You can set the country if the region is unset (ie. it applies to all
+regions in the country).</dd>
+
+<dt><b>Tax Rate</b></dt>
+<dd>This is the percentage tax rate.</dd>
+
+<dt><b>Applies to</b></dt>
+<dd>Select the sales code that should be charged this tax rate. 
+You will need to setup a tax rule for each eligible sales code.</dd>
+
+<dt><b>Treat as</b></dt>
+<dd>Set the sales code that taxes should be recorded under in the
+accounting system. This will be pre-set to a tax code, if one is found.</dd>
+
+</dl>
+
+<p>If your tax rule requires extra configurations (such as times/dates), 
+you can configure it further after submitting, by clicking on it in the 
+list of adjustments.</p>
+
+<a name=coupon></a><h2>Coupon Codes</h2>
+
+<p>You can quickly add coupon codes under the <b>+ Coupon Code</b> tab.
+Coupon codes can be entered at checkout to get special discounts.</p>
+
+<dl>
+
+<dt><b>Name/description for receipt</b></dt>
+<dd>This is how the discount will be described on the invoice.</dd>
+
+<dt><b>Coupon Code</b></dt>
+<dd>This is the code that the purchaser must type in to get the discount.</dd>
+
+<dt><b>Discount</b></dt>
+<dd>The actual discount. Enter either a percentage (for example "50%", which 
+means 50% off), or a number (for example 100, which means $100.00 off).</dd>
+
+<dt><b>Applies to</b></dt>
+<dd>Select the sales code that is eligible for this discount.</dd>
+
+</dl>
+
+<p>If your coupon code requires extra configurations, 
+you can configure it further after submitting, by clicking on it in the 
+list of adjustments.</p>
+
+<a name=config></a><h2>Surcharge Configuration</h2>
+
+<p>The tax and coupon code tabs are shortcuts; if they do not give enough 
+options in the surcharge setup, use the surcharge tab to get a complete set
+of configuration options.</p>
+
+<p>You will also end up on this form if you edit any
+existing surcharges.</p>
+
+<dl>
+
+<dt><b>Surcharge</b></dt>
+<dd>The surcharge name is how it will appear on the invoice.</dd>
+
+<dt><b>Status</b></dt>
+<dd>Set the status to "inactive" to archive it or otherwise prevent it from 
+being applied to invoices.</dd>
+
+<dt><b>Coupon Code</b></dt>
+<dd>If you define a coupon code, the buyer will only receive the benefit of the
+surcharge if they type in a matching code at the time they check out. This code
+is case- and whitespace-sensitive.</dd>
+
+<dt><b>Treat as</b></dt>
+<dd>The surcharge appears as its own line item on the invoice. This
+line item can be categorized for financial reports using this
+option. Discounts to certain purchase categories should be categorized
+the same as the original purchase category, to allow the correct
+recalculation of sales taxes.</dd>
+
+<dt><b>Website</b></dt>
+<dd>The surcharge will only be applied to purchases originating from this
+website/section. If no website is set, it will apply to all websites on this 
+system.</dd>
+
+</dl>
+
+<a name=adjust></a><h2>Cost Adjustments</h2>
+
+<p>The cost fields are used to calculate the actual amount of the surcharge.</p>
+
+<p>A <b>percent</b> value is multiplied by the line-item subtotal. For
+exmaple, if a line item has a subtotal of $20.00, and a 5% tax
+surcharge applies to that item, then a surcharge of 20.00 &times; 0.05 =
+$1.00 will be added to the invoice.</p>
+
+<p>A <b>per item</b> value is a dollar amount that is multiplied by
+the line-item quantity. For example, if a product has a shipping
+charge of $2 per item, and 5 items are purchased, a surcharge of 5 &times;
+2.00 = $10.00 will be added to the invoice.</p>
+
+<p>A <b>per unit size</b> value is a dollar amount that is multiplied
+by the line-item size (which might be a weight, length, or other
+quantity that indicates the size of the item). For example, if a user
+buys 4 of an item that weighs 1.5 kg each, and the shipping cost is
+$5 per kg, a surcharge of 4 &times; 1.5 &times; 5.00 = $30.00 will be added to the
+invoice.</p>
+
+<p>A <b>per product</b> value is a dollar amount that is only applied
+once for a given product (technically, once per line item), no matter
+what quantity is purchased.</p>
+
+<p>A <b>per order</b> value is a dollar amount that is only applied
+once for a given invoice, no matter how many items on that order
+qualify for the surcharge.</p>
+
+<p>You can specify more than one of these, and the costs will be added
+together to get the sucharge subtotal.</p>
+
+<a name=discount></a><h3>Discounts</h3>
+
+<p>When configuring discounts, enter negative values in the cost
+adjustment fields. For example:</p>
+
+<ul>
+<li> "-50" in the percent fields means "50% off"</li>
+<li> "-50" in the "per item" field means a $50 off <i>on each item purchased</i></li>
+<li> "-50" in the "per order" field means $50 off the invoice total</li>
+</ul>
+
+<a name=region></a><h2>Surcharge regions</h2>
+
+<p>Surcharges can be region-specific. This is commonly used for
+handling different sales tax jursidictions, and for calculating
+shipping charges based on region being shipped to.</p>
+
+<p>The region is compared to the region of the buyer (as entered on the 
+checkout screen) to determine whether it should be charged. However, note 
+that some purchases can declare their own region for surcharge purposes. 
+For example, event registrations may be fixed to the event location, 
+regardless of where the purchaser lives.</p>
+
+<p>Specify states and provinces using their standard 2-letter
+codes. You can combine multiple province/states into one region by
+separating them with a bar character, like this:</p>
+
+<pre>
+BC|AB|SK
+</pre>
+
+<p>Countries can be specified and combined the same way. For example,
+to apply a surcharge to North American buyers, you can set the country
+to:</p>
+
+<pre>
+Canada|Mexico|United States
+</pre>
+
+<p>To specify an everywhere-except condition, put an exclamation point
+in front of the state/province or country. For example, to add a
+surchage for everywhere outside of Canada or the USA, use:</p>
+
+<pre>
+!Canada|United States
+</pre>
+
+<a name=date></a><h2>Surcharge dates</h2>
+
+<p>Surcharges can be set up to be valid only during certain dates and
+times.  Set the start and end dates and times using the date
+selectors. If the start time is unset, then the surcharge is valid at
+any time up to the end time. If the end date is unset, then it is
+valid at any time after the start time. If both are unset, then it is
+always valid.</p>
+
+<a name=cond></a><h2>Surcharge conditions</h2>
+
+<p>Surcharges can be configured to apply <b>TO</b> certain items only,
+and also to apply only <b>IF</b> certain other items exist on the invoice.</p>
+
+<dl>
+
+<dt><b>Apply to</b></dt>
+<dd>The surcharge only applies to line items of this account code. If
+the surcharge applies to multiple account codes, a different surcharge
+should be set up for each.</dd>
+
+<dt><b>Apply to object type, ID</b></dt>
+<dd>If the surcharge only applies to a very specific line item, the
+type and ID of that line item can be specified here. This is used for
+tying discounts or special surcharges to specific products, for
+instance.</dd>
+
+<dt><b>Apply to GL code</b></dt>
+<dd>You can specify GL codes that must match the purchased item if 
+the surcharge is to apply.</dd>
+
+<dt><b>Apply if they bought</b></dt>
+<dd>The surcharge only applies if the buyer also bought something of this 
+account code.</dd>
+
+<dt><b>Apply if they bought object type, ID</b></dt>
+<dd>The surcharge only applies if the buyer also bought a specific item, as
+given by the type and ID.</dd>
+
+<dt><b>Apply if they bought GL code</b></dt>
+<dd>The surcharge will only apply if an item of this GL code is also on
+the invoice.</dd>
+
+</dl>
+
+<a name=conditem></a><h3>Object types &amp; IDs</h3>
+
+<p>Object type and ID allows you to specify a specific database object
+that is being purchased. The type is usually a database table, but any
+content type will be taken as a synonym for the <code>content</code> table.
+The ID is the record ID that represents the purchased object.</p>
+
+<p>You can set the object type and ID to exactly the item being
+purchased, for example <code>product</code> <code>1234</code> will
+match exactly that product.</p>
+
+<p>You can also set the object type and ID to a category, which will
+match objects belonging to that category. For
+example, <code>catalog</code> <code>777</code> will match any product
+in that catalog, and <code>fee</code> <code>555</code> will match any
+ticket from that fee.</p>
+
+<p>You can also go one level deeper in the categories. For example,
+<code>catalog</code> <code>777</code> will also match any product
+belonging to any sub-catalog of that catalog,
+and <code>event</code> <code>444</code> will match any ticket from any
+fee in that event.</p>
+
+<a name=mins></a><h2>Minimums</h2>
+
+<p>You can define minimum values before this surcharge will kick in.</p>
+
+<dl>
+<dt><b>Minimum Quantity</b></dt>
+<dd>The surcharge will only apply to an item if the quantity purchased is 
+at least this number.</dd>
+<dt><b>Minimum Value</b></dt>
+<dd>The surcharge will only apply to an item if the total cost of the item
+is at least this amount.</dd>
+<dt><b>Minimum Size</b></dt>
+<dd>The surcharge will only apply to an item if the total size is 
+at least this number.</dd>
+</dl>
+
+<a name=acctcode></a><h2>Sales Codes</h2>
+
+<p>Every line item in a sale (including surcharges like taxes and
+shipping costs) is tagged with a sales code to categorize it. Click on
+the <b>Sales Codes</b> tab to examine your sales codes and add new
+ones.</p>
+
+<p>There are only two fields of importance when editing/adding sales codes:</p>
+
+<ul>
+<li>Code: the "short" version of the sales code</li>
+<li>Description: the "long" version of the sales code</li>
+</ul>
+
+<p>These are just descriptions; the actual behaviour of a sales code
+depends on the surcharge rules you setup for it.</p>
+
+<p>The numeric ID of sales codes translate directly to GL codes, as
+follows:</p>
+
+<ul>
+<li>1XX... = sales of code XX</li>
+<li>3XX... = refunds of code XX</li>
+</ul>
+
+<p>For example, if event registrations are sales code #4, then a GL
+code of 104.555.666 refers to a ticket sale from event 555, fee 666.</p>

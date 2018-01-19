@@ -1,0 +1,128 @@
+<h1>Financial Reports</h1>
+
+<p>The Financial Reports module allows you to generate summary reports of 
+your e-commerce activity. This gives you a high-level view of your website's
+online sales. To view specific accounts, invoices, or payments, use
+the Payments module instead. (Account names and invoice numbers in Financial
+reports will link to the Payment module.)</p>
+
+<p>All financial reports display summarized financial activity within
+a date range. The date range is preset to the previous 30 days, but
+can be set manually by entering your own date range. You can click on
+the date icons to pick dates from a calendar.</p>
+
+<h2>Definitions</h2>
+
+<p>A <strong>sale</strong> or <strong>purchase</strong> is an invoice
+that has been issued to one of your customers. It has not necessarily
+been paid yet. We only include <strong>active</strong> invoices in
+these reports. Invoices that are inactive, canceled, still in
+processing, or advisory are not considered as actual sales, and are
+retained only for purposes of keeping an audit trail.</p>
+
+<p><strong>Revenues</strong> are actual <strong>payments</strong> that
+have been received from your customers. If every purchase is paid in
+full, then your revenues should equal your sales. If you are still
+awaiting payment for some purchases, or if some customers have
+over-paid, then they will not balance.</p>
+
+<p><strong>Accounts</strong> are customers. Individual accounts may
+make numerous distinct purchases in a time period. The
+account <strong>balance</strong> is the difference between the
+purchases (debits) and payments (credits) on the account.</p>
+
+<h2>Report Types</h2>
+
+<dl>
+<dt>Purchases &amp; Payments</dt>
+<dd>
+This report summarizes each financial transaction known to the
+system. Transactions are either debits (receivables, ie. invoices
+issued) or credits (payments received). In the case of debits, the
+report also tries to break the purchase down into the various account
+codes so you can see in what areas the sales are occurring. Summary
+totals are given at the bottom of the report; the total debits are the 
+total sales made, and the total credits are the total payments received.
+These may not balance perfectly if you received payments in the period 
+for sales in an earlier period, or if you issued receivables in the 
+period that were not paid in that period.
+</dd>
+<dt>Sales (purchases only)</dt>
+<dd>This report displays sales only, ie. your receivables for the period.
+Sales are summarized, which means you see invoice totals, and account code 
+subtotals only. Individual line items are not reported (although you can 
+click the invoice number to view them). No payment information is included.
+</dd>
+<dt>Itemized Sales</dt>
+<dd>
+Itemized sales breaks each sale down into its specific line items so
+that you can see in detail exactly what the individual charges
+were. It does not include any payment information. This report includes
+items that had zero cost, since regardless of cost, those items were
+sold.
+</dd>
+<dt>Revenues (payments only)</dt>
+<dd>
+This report display all payments received in the time period. Payments
+are always associated with an account, and might also be associated
+with a particular invoice. However, some payments are not connected to
+an invoice (eg. a payment toward an outstanding account
+balance, which might be related to several invoices).
+</dd>
+<dt>Itemized revenues</dt>
+<dd>
+This report is similar to itemized sales, but we only report the line
+item if a payment was received on the invoice. The revenue reported will
+be accurate if the invoice was paid in full, but not if the payment was
+only a partial payment (since in that case we cannot tell which of the 
+items should be considered paid or not), nor if payments were received
+on an account, but not applied directly to an invoice. It gives the best
+results for e-commerce payments, since those tend to be paid in full at
+the time of purchase. This report does not include items that had zero cost,
+since those did not create revenue.
+</dd>
+<dt>Journal (itemized revenues + payments)</dt>
+<dd>
+The journal shows a listing of every item sold and every payment
+received, ordered by the date and time of the journal entry.
+</dd>
+<dt>GL code summaries</dt>
+<dd>
+All purchased items and payments are grouped by their GL codes, and summary
+totals are reported for each.
+</dd>
+<dt>Account summaries</dt>
+<dd>
+Account activity summarizes all purchases and payments made by each
+account that had activity in the time period. Individual purchases or
+invoice numbers are not shown, because there could be many in the
+given time period. The values shown are subtotals of all invoices and
+payments in that time. An account credit is a payment from that
+account, and an account debit is a receivable due from that account. A
+negative balance, therefore, is an amount owing to you from the
+account holder.
+</dd>
+<dt>Daily summaries</dt>
+<dd>
+The daily summaries report shows subtotals of your sales (broken out
+by account code) and revenues for each day in the reporting period.
+The report also includes some charts to display this information graphically.
+</dd>
+<dt>Monthly summaries</dt>
+<dd>
+The monthly summaries report shows subtotals of your sales (broken out
+by account code) and revenues for each month in the reporting period.
+The report also includes some charts to display this information graphically.
+</dd>
+</dt>
+
+<h2>Report Details and Options</h2>
+
+<p>When reports show specific invoice numbers or account names, those
+may be linked to the Payment module. You can use this to inspect
+account or invoice data in more detail. The Payment module will show
+everything that it knows about the invoice or account requested; it
+will ignore the parameters of the particular financial report you are
+viewing (such as the date range).</p>
+
+<p>All reports are exportable to CSV or Excel format.</p>

@@ -1,0 +1,22 @@
+table {
+    margin-top:5px;
+}
+table.SurchargeSetup {
+    margin-bottom:25px;
+    min-width:600px;
+}
+table.SurchargeSetup td {
+    padding:0px;
+}
+table.SurchargeSetup caption {
+    background-color:#ccc;
+    color:black;
+    padding:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+    border-radius:5px;
+}
+a.inactive {
+    text-decoration:line-through;
+    color:grey;
+}

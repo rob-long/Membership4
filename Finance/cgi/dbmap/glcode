@@ -1,0 +1,5 @@
+column	datatype	size	label	display	read	write	search	validate
+glcode_id	key#	0	ID	no	8	9	no	hard
+icode	string	40	Internal GL Code	brief	5	8	yes	soft
+xcode	string	40	External GL Code	key	5	8	yes	soft
+description	string	255	Description	brief	5	8	yes	no

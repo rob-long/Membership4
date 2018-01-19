@@ -1,0 +1,7 @@
+column	datatype	size	label	display	read	write	search	validate
+qa_translation_id	key#	0	ID	full	5	9	no	hard
+qa_base_id	key:qa_base	0	Model Question	full	5	5	no	soft
+version	list:version	40	Alternate Language	brief	5	5	yes	soft
+label	string	255	Question/Prompt	key	5	5	yes	soft
+value	text	2000	Input responses	full	5	5	no	no
+mtime	timestamp	0	Last Modified	full	5	9	no	no

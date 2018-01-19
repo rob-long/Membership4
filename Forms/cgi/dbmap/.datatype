@@ -1,0 +1,8 @@
+type	tag	regexp
+variable_name	text	[a-zA-Z]\w*
+list:form_status	select	active|inactive
+list:form_type	radio	registration|other
+list:form_input_format	select	short text|long text|select|multiselect|radio|radio+other|checkbox|checklist|checklist+other|password|hidden|label|preformatted|file|number|range|date|time|url|email
+list:form_input_datatype	select	int|decimal|money|email|url|date|time|datetime
+set:form_question_flags	checkbox	required|placeholder|show to admins only
+set:form_flags	checkbox	members-only|confirmation screen|captcha|robot counter-measures|single submission only|prepopulate with member data

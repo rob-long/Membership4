@@ -1,0 +1,9 @@
+column	datatype	size	label	display	read	write	search	validate
+receivable_id	key#	0	ID	key	8	8	no	hard
+account_id	key:account	0	Account	full	5	8	no	soft
+type	list:receivable_type	20	Type	brief	5	5	yes	soft
+date	timestamp	0	Date	brief	5	5	yes	yes
+#date	date	0	Date	brief	5	5	yes	soft
+description	text	100	Description	full	5	5	yes	no
+status	list:receivable_status	40	Status	brief	5	5	yes	soft
+invoice	string	40	External Invoice Number	key	5	5	yes	yes

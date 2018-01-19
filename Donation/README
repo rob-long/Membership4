@@ -1,0 +1,16 @@
+The Donation plug-in is a simple tool to solicit a donation amount and
+add it to the user's shopping cart.
+
+To run a fundraising campaign, add the following parameters to your
+Donation configuration file:
+
+campaign_start = YYYY-MM-DD
+campaign_goal = nnnnn.00
+
+This will allow the Donation plug-in to display a fundraising gauge,
+based on donations received since the start date. To insert a gauge 
+into a page, use the module parameter "gauge". You can also customize
+the width of your guage, using the configurating setting:
+
+gauge_width = 400
+

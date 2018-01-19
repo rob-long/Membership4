@@ -1,0 +1,23 @@
+column	datatype	size	label	display	read	write	search	validate
+receivable_item_id	key#	0	Item #	no	8	9	no	hard
+receivable_id	key:receivable	0	Receivable	full	5	8	no	soft
+status	list:receivable_item_status	20	Status	brief	5	6	yes	yes
+item	string	255	Item	key	5	6	yes	soft
+description	text	100	Description	full	5	6	yes	no
+quantity	decimal	8,2	Quantity	brief	5	6	yes	yes
+size	decimal	8,2	Unit Size	brief	5	6	yes	yes
+cost	money	0	Unit Cost	brief	5	6	yes	soft
+acctcode_id	key=acctcode	0	Accounting Code	brief	5	6	yes	yes
+acctcode2	string	20	Accounting Subcode	brief	5	6	yes	yes
+acctcode3	string	20	Accounting Subcode 2	brief	5	6	yes	yes
+surcharge_id	key=surcharge	0	Surcharge	full	5	6	yes	yes
+parent	key:receivable_item	0	Associated with	full	5	8	no	yes
+uid	key=user	0	Entered by	full	5	9	yes	yes
+note	text	200	Note	full	5	6	yes	no
+objtype	string	40	Type	full	5	6	yes	no
+objid	int	0	ID	full	5	6	yes	yes
+country	string	40	Country for tax purposes	full	5	6	yes	no
+provstate	string	40	Province/State for tax purposes	full	5	6	yes	no
+fulfilled_by	key=user	0	Order fulfilled by	full	5	6	yes	no
+fulfilled_on	datetime	0	Fulfilled on	full	5	6	no	yes
+fulfilled_qty	decimal	8,2	Quantity Fulfilled	full	5	6	no	yes

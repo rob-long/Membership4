@@ -1,0 +1,4 @@
+column	datatype	size	label	display	read	write	validate
+query_id	key#	0	Query ID	full	3	4	hard
+title	string	255	Title	key	2	3	soft
+query	text	1000	Query	full	2	3	soft

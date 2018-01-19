@@ -1,0 +1,4 @@
+column	datatype	size	label	display	read	write	search	validate
+acctcode_id	key#	0	ID	no	8	9	no	hard
+code	string	20	Text Code	key	5	8	yes	soft
+description	text	100	Description	key	5	8	yes	no

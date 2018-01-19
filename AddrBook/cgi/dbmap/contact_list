@@ -1,0 +1,9 @@
+column	datatype	size	label	display	read	write	search	validate	default
+contact_list_id	key#	0	Contact ID	no	8	9	no	hard
+section_id	key:content	0	Website	full	5	5	yes	yes
+name	string	255	Contact List	key	5	5	yes	no
+type	list:contact_list_type	20	Type	brief	5	5	yes	yes
+dupe	list:contact_list_dupe	20	Contact records per person	brief	5	5	yes	yes
+unsubscribe	list:contact_list_unsubscribe	20	Unsubscribed contact records	brief	5	5	yes	yes
+parameters	text	120	Parameters	full	5	5	yes	no
+include	key:contact_list	0	Include contact list	full	5	5	yes	yes

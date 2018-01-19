@@ -1,0 +1,7 @@
+column	datatype	size	label	display	read	write	search	validate
+account_id	key#	0	Account ID	no	8	9	no	hard
+section_id	key=content	0	Website	full	8	8	yes	yes
+uid	key=user	0	User	brief	5	7	yes	yes
+name	string	255	Name	key	5	7	yes	soft
+code	string	80	Code	brief	5	7	yes	yes
+taxcode	string	80	Tax-Exemption #	full	5	7	yes	no

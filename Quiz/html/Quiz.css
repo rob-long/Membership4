@@ -1,0 +1,16 @@
+.QuizQuestion {
+    padding:10px;
+}
+.QuizQuestionPrompt {
+    font-size:120%;
+}
+.QuizQuestionInput {
+    padding:5px 15px;
+}
+
+
+div.bar {
+    color:#006;
+    background-color:#006;
+    overflow:hidden;
+}

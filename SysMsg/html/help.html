@@ -1,0 +1,190 @@
+<h1>System Messages</h1>
+
+<p>This plug-in module allows the system administrator to customize
+system messages that are printed out by various components and
+plug-ins.  System messages are those messages and other strings of
+text that are "hard-coded" in the system and not managed using CMS
+tools like regular content is.</p>
+
+<h2>Languages</h2>
+
+<p>Your system can support any number of alternate languages. If there
+is more than one choice, you will be asked to choose a language to
+work with when you start. Otherwise, the second language will be
+chosen for you automatically.</p>
+
+<p>If you need to change the languages that your system supports,
+follow these instructions:</p>
+
+<h3>Allowed Languages</h3>
+
+<p>Your list of alternate languages is taken from the datatype
+<code>list:version</code>, which is defined in
+<code>cgi-bin/dbmap/.datatype</code>.  Add a line to this file (or
+edit the existing line), with three tab-delimited fields like
+this:</p>
+
+<pre>
+list:version	select	Français
+</pre>
+
+<p>The last field lists the <em>alternate</em> languages available. (Do
+not include English in this list.) This example adds only a single
+language, so it sets up a bilingual site in English and French.  If
+you want more than two languages, add more to the end of this line,
+separated by the bar character "|".  There is no limit to the number
+of languages that you can support, for example:</p>
+
+<pre>
+list:version	select	Français|Español|Deutcsh
+</pre>
+
+<p>If the language names require non-ASCII characters, add them to this
+file in the same character encoding you use for ExSite.  This is UTF-8 by
+default (although you can use any character encoding by setting the
+configuration parameter <code>charset</code>). For example, to support 
+French, Chinese, and Russian:</p>
+
+<pre>
+list:version	select	Français|中文|русский
+</pre>
+
+<h2>Building a message dictionary</h2>
+
+<p>Now you should put the system into another language mode so that it
+will try to use messages in the alternate languages.  There are two
+ways you can change the language mode:</p>
+
+<ol>
+
+<li> Create pages in those other languages.  (Set the pages'
+version/language to one of your selected languages, and then interact
+with ExSite and your plug-ins through those pages.)</li>
+
+<li> Change the system's default language.  (Set the configuration parameter 
+<code>default_version</code> to one of your selected languages, and then
+interact with the administrator tools.)
+
+</ol>
+
+<p>Every time the system tries to output a system message in one of
+your alternate languages, but cannot find an appropriate translation,
+it falls back on the English version, and logs the message in the
+message dictionary for the attention of a translator.  This means that
+you simply have to use your system for a while, and it will
+automatically log for translation every message that sees common
+usage.</p>
+
+<p>In administrator control panels, failed translations are
+highlighted <span style="font-style:italic; border-bottom:1px dotted
+red;">like this</span> so you can spot new translatables as they
+appear.  You can add a CSS class "NoTranslation" to your website
+stylesheet if you would like the same feature on your regular
+webpages.</p>
+
+<h2>Translating</h2>
+
+<p>Once you have accumulated a good number of messages in your
+translation logs, you can use the <strong>System Messages</strong>
+plug-in to perform your translations.</p>
+
+<p>Launch the plug-in, select the language/version you want to
+translate, and it will show you a list of messages that it has tried
+unsuccessfully to translate into your preferred language.  Click on
+the update buttons to translate each message.</p>
+
+<p>The translation form shows the default (English) message, with a
+text area to enter the equivalent in your selected language.  After
+you submit a translation, it will disappear from the to-do list of
+required translations, and you can move on to another message. (You
+can still find the translated message under "All Translations".</p>
+
+<h3>Templated Messages</h3>
+
+<p>Some messages contain tags to insert other data.  These might look
+something like this example:</p>
+
+<pre>
+Please contact the system administrator, at [[admin_email]].
+</pre>
+
+<p>That means that some other data (in this case, an email address)
+will be substituted into the <code>[[admin_email]]</code> position of
+the message at a later time.  When translating such messages, <u>do
+not translate/change those tags</u>, or the system will not know where
+to put the data.</p>
+
+<h3>Maintenance</h3>
+
+<p>The procedure above will identify the most-viewed messages quickly,
+but some rare messages (especially error messages) will get missed.
+Over time, ExSite will slowly uncover more of these messages.
+Whenever a new message is found, it will be displayed in the special
+style that indicates a missing translation.  You can take this as a
+hint that you or your translator can visit the System Message plug-in
+to touch-up the translations.</p>
+
+<p>If you ever need to correct or update a translation, simply use the
+search tool in the System Messages control panel to find the message
+of interest.</p>
+
+<p>If system messages get changed or updated, they will usually appear
+as entirely new messages in the dictionary, requiring translation all
+over again.</p>
+
+<h2>Coding for Internationalization</h2>
+
+<p>Code must be written to support internationalization to make use of
+this feature.  If not, then the messages will only output in their
+original hard-coded version.  If you see a message on a system screen in
+the wrong language, then it supports internationalization if it has
+been restyled to indicate a missing translation.</p>
+
+<p>To upgrade messages in the code to support internationalization,
+simply enclose the message string in <code>$msg{...}</code>.  For
+example, the old message:</p>
+
+<pre>
+return "Permission denied - you do not appear to be logged in!";
+</pre>
+
+<p>should be rewritten as:</p>
+
+<pre>
+return $msg{"Permission denied - you do not appear to be logged in!"};
+</pre>
+
+<p>To allow for messages that include substituted values from external
+sources, you can use a method like this:</p>
+
+<p>Old:</p>
+<pre>
+return "Please contact the system administrator, at $admin_email."
+</pre>
+
+<p>New (method 1):</p>
+<pre>
+return $msg{"Please contact the system administrator, at"}." ".$admin_email;
+</pre>
+
+<p>New (method 2, using <code>ExSite::Misc::substitute()</code>):</p>
+<pre>
+return &substitute(
+          $msg{"Please contact the system administrator, at [[admin_email]].",
+          { admin_email => $some_email_address }
+       );
+</pre>
+
+<p>Method 1 gives the translator a sentence fragment to
+translate. Sometimes this can be insufficient to make a good
+translation, especially if the sentence structure should be different
+in the other language.  The 2nd method will appear as a more complete
+message in the translation tools, with substitution fields clearly
+marked.  This may give the translator more flexibility for a correct
+translation.</p>
+
+<p>In any case, do not include the actual substituted values in
+<code>$msg{...}</code> or you could end up with many variations on a
+single message, all requiring individual translation.</p>
+
+

@@ -1,0 +1,9 @@
+span.translationMissing {
+    color:red;
+}
+span.translationStale {
+    color:#cccc00;
+}
+span.translationOK {
+    color:#009900;
+}

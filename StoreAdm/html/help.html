@@ -1,0 +1,216 @@
+<h1>Persistent Data Store</h2>
+
+<p>The persistent data store is a small, fast database used by various
+components that require short-term data persistence, or fast data
+access.  It is an optional feature used for session management,
+database caching, and storing system configurations.  By default it is
+not enabled; see the <a href="#enabling">end of this document</a> for
+instructions on turning this feature on.  When on, this application
+can be used to peek inside the persistent data store, inspect items,
+and remove items.</p>
+
+<p>Every item in the store can be given an expiry time, after which it
+will be automatically purged from the store.  Expiry times default to
+1 hour, but can be set to other times, indefinite (no expiry), or
+renewed/updated as needed.</p>
+
+<h2>Store Inventory</h2>
+
+<p>This is a list of all items in the store.  The size (in bytes) is
+shown, and the administrator has links to inspect or clear (delete)
+the item.  Some items (cached items, configurations) will automatically
+be reloaded if they are needed, so they may reappear after you delete 
+them.</p>
+
+<p>The item name gives some indication of its purpose:</p>
+
+<dl>
+
+<dt><b>_id</b></dt>
+<dd>This is the store identity (should be the location of the
+cgi-bin directory).  The store will not run if this does not match
+the actual working directory, so do not clear this item!</dd>
+
+<dt><b>_log</b></dt> <dd>If store logging is enabled, this contains a
+log of important transactions with the store.  Inspect this to see a
+summary of recent store activity.  This may be useful in a development
+environment, but is probably just a performance drag in a production
+setting.</dd>
+
+<dt><b>cache:...</b></dt>
+<dd>These are cached query results from the database.  Inspect these
+to see the actual database data.  They will typically persist for up
+to 1 hour, before being automatically cleaned out.  It is a good idea
+to clear the cache if you make any manual changes to the database,
+otherwise the website may not see those changes.</dd>
+
+<dt><b>session:...</b></dt>
+<dd>These are individual users' sessions.  Inspect these to see their
+session data.  Sessions are renewed if the user remains active on the
+site, but expire if activity ceases (typically after 1 hour).  If you
+clear a session, that user's session state is erased/reset. 
+If session-based authentication is used, it will also log them out.</dd>
+
+<dt><b>config:...</b></dt> 
+
+<dd>These are data structures describing the system configuration.
+The base system configuration is kept in <b>config:</b>, and the
+configurations of various plugins are kept in <b>config:[Module]</b>.
+ExSite keeps copies handy in the store so that it does not have to
+reload and reparse the configuration files on every request.  If you
+clear these, ExSite will reload them from the originals; you should do
+this if you change the configuration files, or the changes will not be
+seen.</dd>
+
+<dt><b>dbmap:...</b></dt>
+<dd>These are data structures describing the database configuration.  
+The base dbmaps are kept in <b>dbmap:[database_name]</b>, while 
+submaps for various plugins are kept in <b>dbmap:[Module]</b>.
+ExSite keeps copies handy in the store so that it does not have to 
+reload and reparse the dbmap files on every request.  If you clear 
+these, ExSite will reload them from the originals; you should do this 
+if you change the dbmap, or the changes will not be seen.</dd>
+
+</dl>
+
+<p>There may be other items in the store as well, but they are not
+described here.</p>
+
+<p>The toolbar at the top of the store has the following buttons:</p>
+
+<ul>
+<li><b>Reset store</b>: clears all stored data, excluding items beginning with leading underscores.</li>
+<li><b>Clear dbmap</b>: clears all dbmap configurations, forcing them to be reloaded.</li>
+<li><b>Clear session</b>: erases all user sessions.</li>
+<li><b>Clear config</b>: clears all configurations, forcing them to be reloaded.</li>
+<li><b>Clear cache</b>: clears all cached database queries, forcing the system to go back to the database.</li>
+<li><b>Refresh</b>: refresh the store inventory.</li>
+</ul>
+
+<h2>Inspecting Items</h2>
+
+<p>Click the inspect buttons to see what is actually contained in an
+item in the store.  The structure of the resulting data will vary
+depending on what you are looking at.</p>
+
+<p>The expiry time of the item is noted above the data, as MM:SS.
+Some items do not expire, and will be noted as such.  Items that have
+passed their expiry time are noted as EXPIRED, but will not actually
+be removed until the next time the store goes through a round of
+garbage collection.  (The time until the next round of garbage
+collection is noted at the bottom of the store inventory.)</p>
+
+<a name="enabling"></a>
+<h2>Enabling the Store</h2>
+
+<p>Why should you enable the store?</p>
+
+<ul>
+
+<li> it improves performance by caching frequently used data, and reducing
+load on your database server</li>
+
+<li> it increases your website's throughput capacity (number of pages
+served per second), and ability to withstand DOS attacks,
+traffic spikes, and badly-behaved robots</li>
+
+<li> it enables the use of sessions to track the state of a user's visit</li>
+
+</ul>
+
+<p>However, there are a few reasons why you might not want to use the
+store:</p>
+
+<ul>
+
+<li> it is slightly more complicated to tinker with or modify the system
+configuration, which can be annoying in a development environment</li>
+
+<li> it creates an extra store database file in your web directories,
+which can grow to become large if it not rebuilt or reset
+periodically</li>
+
+<li> database caching can cause data integrity problems if your
+databases are also being updated by other agents (people or programs)
+that don't employ ExSite's caching tools, since the cache will not
+reflect those 3rd-party updates</li>
+
+</ul>
+
+<p>Note that all of these issues can be mitigated by manual
+intervention, to clear affected items, reset the store, or rebuild the
+store database.  (However, manual intervention is not always possible
+or practical.)  If you decide that the benefits outweight the
+disadvantages, you need to do the following things to enable the
+store:</p>
+
+<ol>
+
+<li> Edit <code>Local::store_conf()</code> to set your store
+configuration parameters.  Remove "<code>_disabled</code>" from the
+routine name to ensure that the configuration is picked up by the
+system.</li>
+
+<li> Run the following command from your website's cgi-bin to
+initialize the store database:
+
+<pre>
+../bin/store.pl --reset
+</pre>
+
+</li>
+
+<li>Then re-launch this application (or refresh its window) to see the
+activated store contents.</li>
+
+</ol>
+
+<h2>Rebuilding the Store</h2>
+
+<p>The store is built on a GDBM database.  This type of database grows
+in size, but never shrinks unless you tell it to.  That means your
+store will grow in size and become very large if you do not
+periodically rebuild it.</p>
+
+<p>To manually rebuild the store, use the following command from the
+shell (execute from your CGI-BIN directory):</p>
+
+<pre>
+../bin/store.pl --rebuild
+</pre>
+
+<h2>Automating Store Management</h2>
+
+<p>To rebuild the store automatically, use the system Task Manager to
+set up a recurring task with the following parameters:</p>
+
+<p>
+<b>Name:</b> Rebuild store<br>
+<b>Module:</b> StoreAdm<br>
+<b>Command:</b> rebuild<br>
+<b>Method:</b> daily or weekly
+</p>
+
+<p>High-traffic sites should rebuild the store at least daily.
+Lower-traffic sites can do it weekly.  In principle you can rebuild hourly,
+but rebuilding will lock your store up for a number of seconds, and you may
+not want to do this during high-traffic periods.</p>
+
+<p>Note that you can also setup other automatic store management tasks
+in a similar way, by changing some of the above parameters, for example:</p>
+
+<p>
+<b>Name:</b> Clear everything in store<br>
+<b>Command:</b> reset
+</p>
+
+<p>
+<b>Name:</b> Delete [item]<br>
+<b>Command:</b> delete<br>
+<b>ID:</b> [store item name]
+</p>
+
+<p>The last one can be used to effectively expire some permanent items
+and force them to be reloaded periodically.  For example, if you
+delete <b>config:</b> on an hourly basis, then your system
+configuration will automatically get reloaded once per hour.</p>

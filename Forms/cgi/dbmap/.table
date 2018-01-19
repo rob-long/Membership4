@@ -1,0 +1,3 @@
+table	alias	key	title	plural	read	insert	update	delete	search	index	class
+response	response	response_id	Response	Responses	5	5	5	5	5	form_id	Modules::Forms::Response
+answer	answer	answer_id	Answer	Answers	5	5	5	5	5	response_id	Modules::Forms::Answer

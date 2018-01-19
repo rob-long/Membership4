@@ -1,0 +1,11 @@
+column	datatype	size	label	display	read	write	search	validate	default
+contact_id	key#	0	Contact ID	no	8	9	no	hard
+content_id	key:content	0	Content	full	5	5	yes	yes
+account_id	key:account	0	Account	full	5	5	yes	yes
+type	list:contact_type	20	Type	key	1	1	yes	yes
+name	string	255	Name or other routing information	key	5	5	yes	no
+privacy	enum:access	0	Privacy	full	1	1	no	yes	administrators
+subscribe	list:yn	2	Subscribed to bulk communications	full	5	5	no	yes
+category	string	255	Group	full	5	5	yes	yes
+notes	text	200	Notes	full	5	5	yes	no
+ctime	timestamp	0	Recorded on	full	1	9	no

@@ -1,0 +1,200 @@
+<h1>Address Book</h1>
+
+<p>Your Address Book is a database of all the people and places your
+website knows about. These can come from several sources:</p>
+
+<ul>
+<li>e-commerce customers</li>
+<li>membership systems</li>
+<li>event registrations</li>
+<li>contact list imports</li>
+<li>subscriptions</li>
+<li>other...</li>
+</ul>
+
+<p>Those different subsystems have their own methods of collecting
+contact information. They will all store them in the central Address
+Book.  Some of the applications may provide their own interfaces to
+managing their contacts, but the Address Book application gives you a
+single place where you can search and manage all of these various
+contacts. </p>
+
+<h2>About Address Cards</h2>
+
+<p>An <em>address card</em> is like a business card. It provides a
+complete set of contact information for a certain person/context. A
+person or place may have several cards for different situations. For
+example, a person may have the following address cards:</p>
+
+<ul>
+<li>home</li>
+<li>school</li>
+<li>work</li>
+<li>shipping address</li>
+</ul>
+
+<p>Each of these could provide different street addresses, phone
+numbers, email addresses, and so on, for that particular context. All
+of them ultimately refer to the same person, however.</p>
+
+<p>Each address card also has a privacy setting, which determines who
+can view that personal information:</p>
+
+<ul>
+<li>public - it is okay to show this information to anyone</li>
+<li>members - only show this information to authenticated users</li>
+<li>administrators - only show this information to the website owners</li>
+</ul>
+
+<p>If an individual wants to display their home email to members, but
+not their home phone number, they can add two different cards with
+different privacy settings. More private information can be excluded
+from the cards with more open privacy settings.</p>
+
+<h2>Searching the Address Book</h2>
+
+<h3>Browse</h3>
+
+<p>To browse by letter, go to <strong>Browse</strong>, and choose the
+appropriate letter to view all contacts under it.</p>
+
+<h3>Find</h3>
+
+<p>To search by name, email, or phone number, go to <strong>Find</strong>
+and select the appropriate tab.</p>
+
+<h3>Locations</h3>
+
+<p>To view locations only, go to <strong>Locations</strong> to view a 
+complete listing.</p>
+
+<p>Note that locations are typically used as event venues, or business
+locations. In addition to contact information, you can also provide a
+lengthly text description, an image, a brochure (or other downloadable
+file), and longitude/latitude coordinates (which can be used for
+mapping apps).</p>
+
+<h2>Advanced Search</h2>
+
+<p>The advanced search function uses various special algorithms to
+identify different types of person or place in your address book, and
+lets you filter them in different ways. The different types are:</p>
+
+<ul>
+<li> users - people who can log in to your website</li>
+<li> members - people who have a membership with your organization</li>
+<li> member groups - eg. committees, teams</li>
+<li> registrants - people who have registered for events</li>
+<li> customers - people who have purchased something from your site</li>
+<li> locations - places, not people</li>
+<li> other</li>
+</ul>
+
+<p>Note that these categories can overlap. For example, a member will
+also be a user if they can log in to your website. They will be a
+customer if they have ever paid for anything through the website. They
+will also be a registrant if they have ever signed up for an
+event.</p>
+
+<p>When performing an advanced search, you can select some parameters
+related to the type of contact you have selected, including
+restricting the geographic location to a particular city,
+province/state, or country. You also have the following options:</p>
+
+<ul>
+<li> select a particular type of address card (eg. work addresses only)</li>
+<li> select all matching address cards, or one only per person 
+(the best or most complete one)</li>
+<li> include or exclude address cards that have been explicitly flagged 
+as being unsubscribed from bulk communications</li>
+</ul>
+
+<h3>Saving Contact Lists</h3>
+
+<p>After performing an advanced search, you can export the resulting
+data to .xls or .csv format, for use with other programs.</p>
+
+<p>You can also save the result to a contact list that the system will
+remember. Saved lists can be recalled at any time under
+the <strong>Saved Lists</strong> button. Note that the system saves
+the search parameters, not the exact list of contacts. That means that
+when you revisit a saved list, you get the <em>updated</em> list of
+who matches that search.</p>
+
+<h3>Combined Searches</h3>
+
+<p>You can create contact lists with different combinations of searches 
+by combining those searches in the following way:</p>
+
+<ul>
+<li> Create and save a search using the method above</li>
+<li> Start a new advanced search, and select your saved search as a 
+starting list. Your new search parameters will add to this list.</li>
+<li> You can save and add to this newest search as well.</li>
+</ul>
+
+<h2>Importing New Contacts</h2>
+
+<p>Other plugins automatically import contacts into the Address Book
+when they receive them. To manually import contacts, you can enter
+them individually through the <strong>Add Contact</strong> button, or
+through a bulk CSV upload using the <strong>Import</strong>
+button.</p>
+
+<h3>Administrator-only Fields</h3>
+
+<ul>
+<li>Account - if this address card belongs to an existing member or customer, 
+include their account number here. Do not specify a name if there
+is an account number, since we can get the name from the account.</li>
+<li>Location - if this address card belongs to an existing location, 
+select that location here. You do not need to specify a name if there
+is a location, since we can get the name from there.</li>
+<li>Subscribed - select Y if this contact info can be used for bulk communications, N otherwise.</li>
+<li>Group - if this contact card should be added to a previously uploaded 
+contact list, you can manually specify the name of that list here.</li>
+<li>Notes - any other information about this address card that you want 
+to add. This information is only shown to administrators.</li>
+</ul>
+
+<h3>Bulk Imports</h3>
+
+<p>When you upload a list of contacts as a CSV file, you can
+automatically add the list to your list of saved contact lists, simply
+by providing a name for the saved list.</p>
+
+<p>Uploaded contacts can be entered into the address book in three ways:</p>
+
+<ol>
+
+<li> <b>simple contacts</b> - these are just plain old address cards that are 
+not associated with any other data in the system.</li>
+
+<li> <b>accounts</b> - each uploaded contact will have an account created in 
+their name. Accounts are used by e-commerce and billing systems. If you
+create accounts, you will be able to find these persons in financial tools
+like the POS and Payments modules.</li>
+
+<li> <b>members/users</b> - each uploaded contact will have a login identity
+created in their name. This will allow them to access member-only areas
+of your website. (This will also create an account in their name as well.)</li>
+
+</ol>
+
+<p>Contacts can be tagged with a group name, so that they can easily
+be grouped together into contact lists under that name. Uploaded lists
+will automatically be tagged with a group name based on the name of
+the uploaded file, unless you select a different group name to tag
+them with. If you select one of the known group names, you will be
+adding this uploaded list to the existing group.</p>
+
+<h4>Example</h4>
+
+<p>If you collect names and email addresses for a subscription list on
+your website, those can be added to the address book with a group name
+of "subscription". To manually add to this subscription database, you
+can add individual address cards, with a group name of "subscription",
+or you can upload a list of contacts, and select "subscription" from
+the group code drop-down. (The drop-down shows all known group codes, so
+if you don't have any subscriptions yet, you will have to type it into
+the text field instead.)</p>

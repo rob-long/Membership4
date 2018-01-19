@@ -1,0 +1,4 @@
+The QA (question-answer) plug-in and framework is for constructing web
+forms for various purposes, and collecting the results.  It supports
+numerous question formats, different types of form security, and
+allows for multilingual presentation of forms.

@@ -1,0 +1,13 @@
+column	datatype	size	label	display	read	write	search	validate	default
+qa_form_id	key#	0	ID	none	5	9	no	hard
+content_id	key:content	0	Content	hidden	5	8	yes	hard
+name	string	80	Name	brief	5	5	yes	no
+title	string	128	Title	key	5	5	yes	soft
+type	list:qa_form_type	80	Type	full	5	5	yes	yes
+template	string	80	Template	full	5	5	yes	no
+message	text	400	Acceptance Message	full	5	5	yes	no
+notify	string	255	Notification E-mail To	full	5	5	yes	no
+flags	set:qa_form_flags	255	Settings	full	5	5	yes	yes
+status	list:qa_form_status	20	Status	brief	5	5	yes	soft	active
+mtime	timestamp	0	Last Modified	full	5	9	no	no
+ctime	timestamp	0	Created	full	5	9	no	no

@@ -1,0 +1,6 @@
+column	datatype	size	label	display	read	write	search	validate	default
+contact_info_id	key#	0	Contact Info ID	no	8	9	no	hard
+contact_id	key:contact	0	Contact	5	5	yes	yes
+name	list:contact_fields	255	Key	brief	5	5	yes	no
+value	text	255	Value	key	5	5	yes	no
+privacy	enum:access	0	Privacy	brief	5	5	no	yes	5

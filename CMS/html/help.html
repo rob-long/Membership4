@@ -1,0 +1,558 @@
+<h1>Content Management</h1>
+
+<p>The Content Management tool provides a general-purpose interface to
+all content management functions in the system. It allows you to
+inspect and modify all content items, no matter what type.</p>
+
+<h2>The Browser</h2>
+
+<p>The browser is an exapndable tree view of all of your content. The
+top elements will be website sections, and nested under these will be
+pages, libraries, blogs, and so on. Click on the leftmost arrow to
+open up an item and expose the items that are contained within it.</p>
+
+<p>The browser shows:</p>
+
+<ol>
+<li>content type and ID</li>
+<li>content name (as displayed in the URL)</li>
+<li>posting date (if applicable)</li>
+<li>number of items it contains</li>
+<li>access restrictions</li>
+<li>content role</li>
+<li>whether this content is hidden in any way</li>
+<li>language</li>
+<li>status</li>
+</ol>
+
+<p>Click on the content name to inspect and manage that content
+item. This will open up an overlay window to work on that content.</p>
+
+<p>If the content is of a type that has its own specialized plug-in
+for content managment, that plug-in icon will also be shown to the
+right of the name. Click on that icon to launch the plug-in.</p>
+
+<p>If you create new content, it will not automatically appear in the
+browser. You need to refresh/reload to see it.</p>
+
+<h2>The Inspector</h2>
+
+<p>When you click on a content item in the browser, an inspector
+overlay window opens to view that content in detail. You can close the
+inspector window by clicking on the close tab at the upper right.</p>
+
+<p>The inspector window contains:</p>
+
+<ul>
+<li>a pathbar showing your current location; click on any item in the path to change to that location</li>
+<li>a menubar with numerous operations you can perform on the current content</li>
+<li>a workarea displaying the currently selected operation</li>
+</ul>
+
+<a name=menu></a><h3>The Inspector Menu</h3>
+
+<ul>
+<li>view
+<ul>
+<li><a href="#contents">contents</a></li>
+<li><a href="#preview">preview</a></li>
+<li><a href="#info">info</a></li>
+</ul>
+</li>
+<li>edit
+<ul>
+<li><a href="#conf">configure</a></li>
+<li><a href="#update">update</a></li>
+<li><a href="#metadata">metadata</a></li>
+<li><a href="#order">order</a></li>
+<li><a href="#price">price</a></li>
+<li><a href="#schedule">schedule</a></li>
+<li><a href="#tags">tags</a></li>
+<li><a href="#translations">translations</a></li>
+</ul>
+</li>
+<li>revisions
+<ul>
+<li><a href="#revisions">revisions</a></li>
+<li><a href="#rollback">rollback</a></li>
+</ul>
+</li>
+<li>workflow
+<ul>
+<li><a href="#workflow">workflow</a></li>
+<li><a href="#todo">todo</a></li>
+<li><a href="#keys">keys</a></li>
+</ul>
+</li>
+<li>create
+<ul>
+<li><a href="#newcontent">new content</a></li>
+<li><a href="#copy">copy</a></li>
+</ul>
+</li>
+<li>publish
+<ul>
+<li><a href="#publish">publish</a></li>
+<li><a href="#unpublish">unpublish</a></li>
+<li><a href="#delete">delete</a></li>
+</ul>
+</li>
+<li><a href="#search">search</a></li>
+</ul>
+
+<a name=contents></a><h3>Contents</h3>
+
+<p>The contents view shows all sub-content items under the selected
+item, in the form of icons, which may represent content-types,
+mime-types, or even thumbnails, as appropriate. Click on any icon to
+visit that content item.</p>
+
+<p>The contents view will also show an icon representing revisions of
+the current content, if there are any. Clicking on this will take you
+to the <a href="#revisions">revisions</a> too.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=preview></a><h3>Preview</h3>
+
+<p>The preview shows you an administrator preview of the content. The
+preview can vary, depeding on the content type. It is not necessarily
+the same view that the public seems (although the preview may also
+provide links to the public view).</p>
+
+<p>For basic content, it will display multiple views in both regular
+and source form.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=info></a><h3>Info</h3>
+
+<p>The info screen displays a variety of technical information about
+the content, including its configuration, paths, views, and
+revisions.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=conf></a><h3>Configure</h3>
+
+<p>The configure screen allows you to reconfigure the content, including:</p>
+
+<ul>
+<li>Title - used in headings and page titles</li>
+<li>Label - used in links, menus, and indexes</li>
+<li>Name - used in URLs, for example http://example.com/parent/<b>name</b></li>
+
+<li>URL - specify a custom URL here. This URL will be used in all
+links to the content. <span class="warn">Be careful! Just because you put an URL here
+does not mean your web server will understand your intention.</span> You can
+use this to specify an off-site URL at another website, or you can use
+it to specify a specialized URL at your own website, but in the latter
+case, you must also ensure that your webserver is configured to
+recognize and process that URL (such as through a 301 redirect).</li>
+
+<li>Parent - the determines where in the site this items resides. Be
+careful when you move items around using this field, as not every
+location necessarily makes sense, and it might be hard to find your item again
+if you misplace it.</li>
+
+<li>Template - when displayed in a page-like format, use this
+template. It is not necessary to specify this in most cases, since the
+system can usually guess a good template to use.</li>
+
+<li>Original - some content (for example translations, and aliases)
+are alternative representations of other items in the system. The
+original field points back to the original content. In other cases, it
+should be left blank (or zero).</li>
+
+<li>Language - if this content is in a language other than the
+default (which is usually English), specify that here.</li>
+
+<li>Sortkey - this is an alphanumeric code that is used to sort this
+content relative to its siblings. It sorts alphabetically and is
+case-sensitive, so "aaa" comes after "ABC", and "10" comes before
+"2". Good practice is to use uppercase alpha keys, and include leading
+zeros on numeric keys so that they will sort consistently. Names
+should be ordered so that they sort by the apprpropriate part of the
+name. For example "SMITH JOHN", and "0042". Note that not all content
+is sorted by its sortkey. Blog posts and events are typically sorted
+by date instead, for instance. In those cases, sortkey will be
+ignored. The <a href="#order">order</a> tool provides a simple user
+interface for manually sorting, if you do not want to manage your
+sortkeys individually.</li>
+
+<li>Access - determines who is permitted to view this content.</li>
+
+<li>Hide from - content will automatically be included in menus,
+sitemaps, indexes, and other places. These checkboxes allow you to
+optionally hide it from those places.</p>
+
+<li>Content role - this determines who may manage this
+content. Editorial content is the actual information that website
+visitors come to consume. Design content consists of the auxiliary
+styles, images, and media that are used to decorate
+pages. User-originated content comes from your website visitors.</li>
+
+<li>Publish rule - determines how this content gets published for faster performance.
+<ul>
+<li>static - fast, but visiable to everyone</li>
+<li>dynamic - slow, but personalizable for each visitor (including blocking view for unprivileged viewers)</li>
+<li>hourly, daily, weekly - like static, but automatically republishes at intervals to stay fresh</li>
+<li>never - does not publish</li>
+</ul>
+You do not need to set the publish rule. The system can figure out for
+itself what the best publish rule is. Only set this if you need to
+override the system's choice.</li>
+
+<li>Status - the current <a href="#workflow">workflow</a> status.</li>
+</ul>
+
+<p>Additionally, any special <a href="#metadata">metadata</a> that is
+pertinent to this type of content will also be included on the
+configuration screen.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=update></a><h3>Update</h3>
+
+<p>Updating content is how you change the content <em>as it appears to
+the website visitor</em>. It basically involves adding a
+new <a href="#revision">revision</a>.</p>
+
+<p>There are five ways to update the content:</p>
+
+<ul>
+
+<li>HTML - allows you to enter/edit formatted text content using a
+WYSIWYG editor with various formatting tools.</li>
+
+<li>Text - allows you to enter/edit unformatted text and raw code,
+including HTML and CSS.</li>
+
+<li>File - upload a file. If you upload an image, it will give you
+options to automatically scale it to other sizes.</li>
+
+<li>URL - you can specify a hard URL to this revision. Be careful, as
+this puts control of the content outside the CMS, and it could move or
+disappear without notice.</li>
+
+<li>Path - you can specify a path (on your webserver) to a file that
+should be used for this new revision.</li>
+
+</ul>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=metadata></a><h3>Metadata</h3>
+
+<p>The metadata screen lets you edit any metadata associated with this
+content. Generic metadata (applicable to all content types)
+includesthe Dublin Core metadata standard. Metadata that is specific
+to each content type may also be included. Metadata is, generally
+speaking, optional in most cases.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=order></a><h3>Order</h3>
+
+<p>This tool gives you an easy way to re-order content. The contents
+of this item are listed, and you can drag them into the correct order,
+then click the "save order" button.</p>
+
+<p>This has the effect of setting the sortkey in each sorted item's
+configuration, using a numeric sortkey with leading zeros, such as
+"0002".</p>
+
+<p>Note that order may be ignored by some types of content. (Event
+calendars are ordered by date, for example, regardless of which order you put
+the events in.)</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=price></a><h3>Price</h3>
+
+<p>The price tool lets you manage the prices of this item. You can
+define any number of prices, with various conditions, including the
+dates during which the price is valid, and the access level needed to
+get that price.</p>
+
+<p>As a general rule, the system will choose the cheapest price that a
+particular user is eligible for.</p>
+
+<p>Only some content types have e-commerce functionality; prices will
+be ignored for other types of content.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=schedule></a><h3>Schedule</h3>
+
+<p>The schedule screen allows you manage dates that are associated
+with this item. This can include calendar entries, scheduled tasks,
+to-do lists, and log entries.</p>
+
+<ul>
+
+<li>Tasks - tasks are automatic jobs that you can schedule to run in
+advance. Type the job command into the description field (allowed
+commands are shown below). The job will run on the specified date,
+unless you choose hourly, daily, or weekly, in which case it will run
+regularly between the start and end date.</li>
+
+<li>To-do - to-do items are manual jobs related to this content that
+you can remind yourself to do on the specified date. An e-mail will be
+sent on that date to remind you of this job, and you can also use the
+ToDo plugin to manage your outstanding items on the to-do list.</li>
+
+<li>Log - the log is just a journal of notes on this content.</li>
+
+<li>Calendar - calendar dates are used by items like events to place
+themselves on a calendar.</li>
+
+</ul>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=tags></a><h3>Tags</h3>
+
+<p>Content can be tagged with various keywords, allowing it to be
+indexed by topic, or given special prominence in search indexes under
+those keywords.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=translations></a><h3>Translations</h3>
+
+<p>The CMS supports any number of languages. If you are maintaining
+mirrored content (ie. each content item is duplicated in each of your
+supported languages), the translations tool can help to maintain the
+various translations.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=revisions></a><h3>Revisions</h3>
+
+<p>Every time you <a href="#update">update</a> content, you create a
+new revision. Previous revisions are not lost, but are kept on file
+indefinitely, allowing you to go back and find old
+versions, <a href="#rollback">roll back</a>, or see what changes were
+made. The revisions tool lets you inspect all of the revisions of the
+selected content item.</p>
+
+<p>Each revision is summarized with information about the revision,
+including a change note that gets recorded when
+you <a href="#update">update</a> the content. You also have the
+following tools:</p>
+
+<ul>
+<li>preview - this lets you view the revision directly</li>
+<li>changes - this will display the differences between this revision and the previous one. (Requires the String::Diff module to be installed on your server.)</li>
+<li>restore - this will restore the selected revision to the most current position, effectively updating the content with an old version. It copies the old revision, so the original revision remains in place.</li>
+<li>delete - old revisions that are no longer needed can be deleted here. If you delete the top revision, you are effectively doing a <a href="#rollback">rollback</a>.</li>
+</ul>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=rollback></a><h3>Rollback</h3>
+
+<p>This deletes the most recent revision of this content, effectively
+restoring the previous revision. This is how you "undo" content
+updates.</p>
+
+<p>If you want to "undo" a rollback, you have to find the deleted
+revision in your trash, and restore it from there.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=workflow></a><h3>Workflow</h3>
+
+<p>The workflow status of the content determines where it is in the
+process of "going live". You can update the workflow status of the
+current content, and/or its contents.</p>
+
+<p>Workflow status can be one of:</p>
+
+<ul>
+
+<li>published - live content, visible to your website visitors</li>
+
+<li>archived - old content, still visible, but no longer active. Use this when content is no longer relevant, but you do not want the old links to break.</li>
+
+<li>queued - in the publish queue, to be publised in turn sometime in the near future (depends on your queue settings).</li>
+
+<li>approved - this content is ready to go live, can be published manually.</li>
+
+<li>submitted - content is waiting for approval from a moderator</li>
+
+<li>draft - content is still being worked on</li>
+
+<li>expired - content is out of date, and is no longer available, but might be republished later</li>
+
+<li>canceled - content is out of date, and is no longer relevant or available.</li>
+
+<li>rejected - content was rejected by a moderator, and might be removed.</li>
+
+</ul>
+
+<p>Note that the <a href="#publish">publish</a> tool will
+automatically move a content item to a published status.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=todo></a><h3>Todo</h3>
+
+<p>This adds a task to the to-do list for this
+item. See <a href="#schedule">schedule</a> for more information.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=keys></a><h3>Keys</h3>
+
+<p>The keys to this content determine who is and is not permitted to
+manage it. Keys can be issued for any content item. Typically they are
+issued for sections, and they automatically apply to all of the
+contents, but you can also make keys for specific content items if you
+need more detail in your access controls.</p>
+
+<p>The <b>keyring</b> is the complete set of keys that apply to the
+current content. It will include general purpose keys for the section,
+as well as more specific keys.</li>
+
+<p>Click the + tool to make a new key. The key can be issued to a
+particular administrator, or to a group. The key specifies that that
+person or group can act in certain roles (such as editor, designer,
+moderator, etc). This determines which management operations they are
+allowed to perform on the content. Lastly, you need to specify the key
+type. <b>Grant</b> gives permission, and <b>revoke</b> takes
+permissions away.</p>
+
+<p>The roles are:</p>
+
+<ul>
+
+<li>editor - editors can update and configure editorial content, and create new content items.</li>
+
+<li>designer - designers can update and configure design content, and create new content items.</li>
+
+<li>administrator - administrators can delete, publish, configure, and create content</li>
+
+<li>reviewer - reviewers can moderate (approve/reject) submissions</li>
+
+<li>owner - owners can update/revise content</li>
+
+</ul>
+
+<p>To give someone permission to edit pages, but not to take those
+those changes live, their key should have an editor role only. If
+someone is there to do web design, but should not be posting articles
+or content, their key should have a design role only. If someone is in
+an executive position to make decistions about what goes live when,
+but is not otherwise involved in content production, their key should
+have an administrator role only. If someone needs to approve
+user-contributed content, but should not otherwise be making content
+contributions to the website, their key should have a reviewer role
+only.</p>
+
+<p>Otherwise, you can select multiple roles.</p>
+
+<p>Note that some notification emails will be sent to the website
+owner. If you want to force this to a particular user, make sure their
+keys sets them as an owner of the section.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=newcontent></a><h3>New Content</h3>
+
+<p>This will create new content underneath the current content
+item. Creating content happens in 2 steps:</p>
+
+<ol>
+<li>name the content, and declare its type</li>
+<li>configure the content</li>
+</ol>
+
+<p>This creates an empty content object, which you can work on further
+using the regular content management tools (such as by updating it,
+then publishing it).</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=copy></a><h3>Copy</h3>
+
+<p>The copy function clones the currently selected content. The new
+content will have the same name, with <code>_copy</code> appended. It
+will be a sibling to the content you started from (ie. both will be
+visible from the <a href="#contents">contents</a> view of the
+parent). Click into the copied content to reconfigure and update it to
+suit. For instance, you should rename it to something more meaningful
+than <code><em>OLDNAME</em>_copy</code>.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=publish></a><h3>Publish</h3>
+
+<p>Publishing takes content live. It sets the workflow status to
+"published", and writes out any static files that need to be published
+for performance reasons.</p>
+
+<p>Publishing options are:</p>
+
+<ul>
+<li>Fast - skips publishing anything that already appears to be published. Use this for minor updates.</li>
+<li>Force - publishes files regardless of whether they already appears to be published. Use this when fast publishing overlooks your changes.</li>
+</ul>
+
+<ul>
+<li>This item only - publishes only the currently selected content. Use this for minor updates, when menus and indexes are not expected to change.</li>
+<li>Item, contents, and container - publishes this content, and everything else that touches it. Use this for new posts that will affect menus and indexes on other pages.</li>
+</ul>
+
+<p>In some cases, when menus or sidebars are affected across the
+entire website, it is a good idea to also republish the section.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=unpublish></a><h3>Unpublish</h3>
+
+<p>Unpublish removes any static files that were written out for this
+content. This may cause <em>404 Not Found</em> errors for some
+links. That may be what you want, however, when content has to be
+taken off-line.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+<a name=delete></a><h3>Delete</h3>
+
+<p>Deleting content does the following:</p>
+
+<ul>
+<li>unpublishes any static files associated with this item</li>
+<li>removes all of its revisions</li>
+<li>deletes the content item from the CMS</li>
+<li>does the same for each of the contents. <span class=warn>This can potentially remove a lot of content.</span></li>
+</ul>
+
+
+The info screen displays a variety of technical information about
+the content, including its configuration, paths, views, and
+revisions.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+
+<a name=search></a><h3>Search</h3>
+
+<p>Search lets you find content anywhere in the CMS. There are several
+ways to search:</p>
+
+<ul>
+<li>find content by name/title</li>
+<li>search through metadata</li>
+<li>use the search index to find specific terms</li>
+<li>search all revisions/views (this can be used to find old content that is no longer live)</li>
+<li>resolve content - this searches for content in the same way that the templating system does. That is, it finds the best instance of a given content name to use in the current context.</li>
+</ul>
+
+<p>In each case, click on the search results to jump to that content.</p>
+
+<p><a href="#menu">&lt; back</a></p>
+
+

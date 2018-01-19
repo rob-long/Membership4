@@ -1,0 +1,8 @@
+table	alias	key	title	plural	report	read	insert	update	delete	search	index	class
+qa_form	qa_form	qa_form_id	Form	Forms	table	2	2	2	2	2		Modules::QA::Form
+qa_lib	qa_lib	qa_lib_id	Question Library	Question Library	table	2	2	2	2	2		Modules::QA::Library
+qa_base	qa_base	qa_base_id	Model Question	Model Questions	table	2	2	2	2	2		Modules::QA::Base	
+qa_translation	qa_translation	qa_translation_id	Translated Question	Translated Questions	table	2	2	2	2	2	qa_base_id	Modules::QA::BaseTr
+qa_question	qa_question	qa_question_id	Question	Questions	table	2	2	2	2	2	qa_form_id	Modules::QA::Question
+qa_response	qa_response	qa_response_id	Response	Responses	table	2	2	2	2	2	qa_form_id	Modules::QA::Response
+qa_answer	qa_answer	qa_answer_id	Answer	Answers	table	2	2	2	2	2	qa_response_id	Modules::QA::Answer

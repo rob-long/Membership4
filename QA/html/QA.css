@@ -1,0 +1,115 @@
+a.ResponseButton {
+	font-size:x-small;
+	border:1px outset #999;
+	background-color:#ccc;
+	text-decoration:none;
+	padding:1px 4px 1px 4px;
+	font-weight:normal;
+	color:black;
+}
+a.ResponseButton:hover {
+	background-color:#eee;
+	text-decoration:none;
+}
+.ResponseButtonBox {
+	text-align:right;
+	width:150px;
+	float:right;
+	padding:2px;
+}
+div.bar {
+	color:#006;
+	background-color:#006;
+        overflow:hidden;
+}
+a.popup {
+        color:grey;
+	font-size:80%;
+}
+.MagPopup-inline {
+    display:inline;
+}
+.MagPopup-inline a {
+    color:grey;
+    font-size:80%;
+    text-decoration:none;
+}
+.MagPopup-inline a:hover {
+    color:blue;
+}
+table.filterdates td {
+    border:0px white solid;
+}
+
+div.QA_question {
+    padding:10px;
+    margin-bottom:5px;
+}
+form div.A {
+    background-color:#eee;
+}
+div.QA_prompt {
+    font-size:120%;
+}
+table.QA_question_group td {
+    padding:3px;
+}
+a.liblink {
+    color:grey;
+    text-decoration:none;
+}
+a.liblink:hover {
+    color:blue;
+}
+
+/* highlight alternating question group rows 
+tr.QA_question_group_even {
+    background-color:#eef;
+}
+tr.QA_question_group_odd {
+    background-color:#ffe;
+}
+table.QA_question_group {
+    border-collapse:collapse;
+}
+*/
+
+span.select_question {
+    color:blue;
+    text-decoration:underline;
+    cursor:pointer;
+}
+.selected {
+    padding-left:20px;
+    background:url(check.png) no-repeat;
+}
+.delQuestion {
+    padding-left:20px;
+    margin-left:5px;
+    background:url(cancel.png) no-repeat;
+}
+.success {
+    border:1px solid green;
+    border-radius:5px;
+    color:green;
+    font-weight:bold;
+    padding:5px 10px 5px 25px;
+    background:url(check.png) no-repeat #cfc;
+    background-position: 5px 5px;
+}
+
+/* sortable */
+
+#sortable { 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#sortable li { 
+    margin: 0 3px 3px 3px;
+    padding: 5px;
+    padding-left: 40px;
+    background-color:white;
+    border:1px solid #ddd;
+    background:white url(drag.png) no-repeat 6px center;
+}

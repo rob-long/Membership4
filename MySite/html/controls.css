@@ -1,0 +1,34 @@
+.MySiteBody {
+    border-width:1px; 
+    border-color:red; 
+    border-style:dashed; 
+    padding:0px;
+}
+.MySiteControls {
+    padding-top:20px;
+    padding-bottom:5px;
+}
+a.MySiteUpdate {
+    display: inline;
+    color: #009;
+    cursor: pointer;
+    font-weight: bold;
+    border:1px solid #666;
+    background: #dddddd;
+    margin:2px;
+    padding: 2px 5px;
+    font-size:small;
+    border-radius: 3px;
+    text-decoration:none;
+}
+
+a.MySiteUpdate:hover {
+	background-color:#999;
+	color:white;
+        text-decoration:none;
+}
+
+a.MySiteUpdate:active {
+	background-color:#009;
+        color:white;
+}

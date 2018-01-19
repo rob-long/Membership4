@@ -1,0 +1,81 @@
+.POShelp {
+    color:grey;
+    font-size:70%;
+}
+
+a.invoice_tool {
+    text-decoration:none;
+}
+a.invoice_tool img {
+    height:16px;
+    width:16px;
+    border-width:0px;
+}
+div.listitem {
+    font-size:80%;
+    color:#666;
+}
+a.listcontrol {
+    padding-right:10px;
+}
+div.PayJumper {
+    height:16px;
+    width:200px;
+    float:right;
+    text-align:right;
+}
+div.PayJumper img {
+    height:16px;
+    width:16px;
+    position:relative;
+    top:8px;
+    padding:5px;
+    margin-left:5px;
+    margin-right:10px;
+    border-width:0px;
+    background-color:#ccc;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+div.PayJumper a {
+    font-size:80%;
+    color:#666;
+    text-decoration:none;
+}
+
+/* Pay CSS */
+
+table.Receivable { 
+        border:1px #2c435b solid; 
+        border-collapse:collapse; 
+	margin-bottom:10pt;
+}
+table.Receivable td { 
+        margin:0px; 
+        border-left:1px #2c435b dotted; 
+        padding:4px; 
+}
+table.Receivable tfoot tr { 
+        margin:0px; 
+        border-top:1px #2c435b dotted; 
+        padding:4px; 
+}
+table.Receivable tfoot td { 
+        margin:0px; 
+        border-left:0px white solid;
+        padding:4px; 
+}
+table.Receivable th { 
+        border:1px #2c435b dotted; 
+        margin:0px; 
+        padding:4px; 
+        background-color:#97b9dc;
+	font-weight:bold; 
+	font-size:10px; 
+	color:black;
+}
+.number {
+	text-align:right;
+}
+
+

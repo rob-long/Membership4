@@ -1,0 +1,6 @@
+column	datatype	size	label	display	read	write	validate	default
+ticket_id	key#	0	Ticket ID	full	5	9	hard
+content_id	key:content	0	Fee	brief	5	7	soft
+info	string	80	Details	brief	5	7	no
+status	list:ticket_status	20	Status	brief	5	7	soft	soft
+attendance	list:ticket_attendance	20	Attendance	brief	5	7	yes

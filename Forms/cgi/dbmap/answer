@@ -1,0 +1,5 @@
+column	datatype	size	label	display	read	write	search	validate
+answer_id	key#	0	ID	full	5	9	no	hard
+response_id	key:response2	0	Response	full	5	5	no	soft
+question_id	key:content	0	Question	brief	5	5	no	soft
+value	text	255	Answer	key	5	5	yes	no

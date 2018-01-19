@@ -1,0 +1,43 @@
+/* inspection popups */
+div.MagPopup-ajax {
+    display:inline;
+}
+.mfp-container .white-popup {
+    margin-top:150px;
+}
+.TrashTools a {
+    color: blue;
+    cursor: pointer;
+    border:1px solid #666;
+    background-image:url(buttonbg.png);
+    background-position:5px;
+    margin:2px 0px 2px 4px;
+    padding:2px 3px 1px 4px;
+    font-weight: normal;
+    font-size:x-small;
+    border-radius: 3px;
+    text-decoration:none;
+}
+.TrashTools a:hover {
+    background:#fff;
+    text-decoration:none;
+}
+
+.TrashTools a:active {
+    color: #3b0611;
+    border-top:1px solid #3b0611;
+    border-left:1px solid #3b0611;
+    border-bottom:0px solid #3b0611;
+    border-right:0px solid #3b0611;
+}
+.TrashInspector table.Inspector {
+    border:1px solid grey;
+    float:left;
+    margin-bottom:20px;
+    margin-right:15px;
+}
+table.Inspector caption {
+    background-color:grey;
+    color:white;
+    padding:5px;
+}

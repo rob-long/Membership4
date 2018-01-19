@@ -1,0 +1,10 @@
+The StoreAdm plug-in is used to manage the contents of your persistent
+data store, if you have one.
+
+You must enable the Store in cgi/Local.pm to use this plug-in.
+
+This plug-in also supports the following scheduled tasks:
+command=rebuild - reclaims disk space
+command=reset - clears store contents
+command=purge - clears expired items
+command=delete, id=storeID - clears a specific item from store

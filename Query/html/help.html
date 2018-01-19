@@ -1,0 +1,53 @@
+<h1>Database Query Tool</h1>
+
+<p>The query tool is a place to view ad-hoc and custom reports that
+have been installed on your website. When it starts, it presents you
+with a list of reports. Click a report name to view that report.</p>
+
+<p>The query tool tracks two kinds of saved report:</p>
+
+<h2>Live Reports</h2>
+
+<p>Live reports are run when you click the link. The report reflects
+the current state of the database. Some of these reports may take a
+while to run, so be patient if you see a spinner indicating that the
+website is working.</p>
+
+<p>Click the "new query" link to create a new live report. Live
+reports are creating using the SQL database query language, so you
+must know SQL in order to do this. Do not use this tool if you are
+unfamiliar with SQL, as it talks directly to your database, and could
+cause damage if you are careless with it.</p>
+
+<p>If your live report works as expected, and you want to save it so
+that you can run it again in the future, click the save report button,
+and provide a report name to save it under.</p>
+
+<p>When you are done with your saved live report, you can delete it
+using the delete link. This only deletes the report, not the data used
+to build the report.</p>
+
+<h2>Saved Reports</h2>
+
+<p>Some modules or other system components may generate offline
+reports for later viewing. This is especially useful when reports take
+a long time to generate, so it is better to pregenerate them
+overnight.</p>
+
+<p>Saved reports are pregenerated, so they are easy to view, and don't
+create significant load on your website when you click on
+them. However, the report reflects the state of the database when the
+report was generated, not when you view it.</p>
+
+<p>If you have any saved reports of this nature that you want
+to include here, add them to the Query Tool configuration file like
+so:</p>
+
+<pre>
+saved_reports = 1st report name
+saved_reports += 2nd report name
+saved_reports += another report name
+</pre>
+
+<p>These reports will then be included as options for viewing when you
+launch the Query Reports tool.</p>

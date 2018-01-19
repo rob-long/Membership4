@@ -1,0 +1,7 @@
+column	datatype	size	label	display	read	write	search	validate
+location_id	key#	0	ID	no	9	9	no	hard
+content_id	key:content	0	Location	full	5	5	no	yes
+uid	key:user	0	Owner	brief	5	8	no	no
+type	list:location_type	40	Type	brief	0	1	yes	yes
+longitude	decimal	10,5	Longitude	full	5	5	no	yes
+latitude	decimal	10,5	Latitude	full	5	5	no	yes

@@ -1,0 +1,24 @@
+.DonationFundsRaised {
+   background-color:red;
+   text-align:right;
+   color:white;
+   font-weight:bold;
+   height:14px;
+   padding:4px;
+}
+.DonationGoal {
+
+}
+.DonationGauge {
+   background:url(thermometer.png);
+   background-repeat:no-repeat;
+   height:44px;
+   padding-top:20px;
+   padding-left:55px;
+}
+table.DonationStats th {
+   text-align:left;
+}
+table.DonationStats {
+   margin-top:10px;
+}

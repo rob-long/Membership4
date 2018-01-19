@@ -1,0 +1,3 @@
+type	tag	regexp
+list:gender	radio	M|F
+list:honorific	select	Mr.|Ms.|Mrs.|Dr.|Hon.

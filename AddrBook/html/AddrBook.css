@@ -1,0 +1,139 @@
+td.tab a {
+    font-weight:normal;
+    text-decoration:none;
+}
+td.thistab a {
+    font-weight:normal;
+    text-decoration:none;
+}
+div.tabbox {
+    padding-bottom:10px;
+}
+table.ContactFilters td { 
+    border:0px solid white; 
+    width:100px;
+}
+div.browse_index {
+    height:30px;
+}
+a.alpha {
+    display:block;
+    float:left;
+    text-align:center;
+    border: 1px solid #999;
+    padding:2px;
+    padding-top:4px;
+    height:15px;
+    width:15px;
+    margin:3px;
+    background-color:#ddd;
+    color:#666;
+    text-decoration:none;
+    font-size:80%;
+}
+a.alpha:hover {
+    background-color:white;
+    color:black;
+}
+
+div.AddrCard {
+    height:140px;
+    width:200px;
+    overflow:auto;
+    border:1px solid #999;
+    background-color:white;
+    font-size:x-small;
+    padding:15px;
+    margin-right:10px;
+    margin-bottom:10px;
+    float:left;
+}
+div.AddrCard p {
+    font-size:x-small;
+}
+
+table.AddrBookSearch {
+    margin-bottom:10px;
+}
+table.AddrBookSearch th {
+    padding:15px;
+}
+pre {
+    background-color:white;
+    border:1px dotted grey;
+    padding:10px;
+}
+.ContactVcard {
+    padding-top:5px;
+    color:#999;
+    font-size:80%;
+}
+.ContactVcard a {
+    color:#666;
+}
+.ContactInfo {
+    font-weight:bold;
+    font-family:courier,monospace;
+}
+.ContactAddress {
+    padding-left:25px;
+    background:url(address.png);
+    background-repeat:no-repeat;
+    font-family:courier,monospace;
+    font-size:9pt;
+}
+.ContactPhone {
+    padding-left:25px;
+    background:url(telephone.png);
+    background-repeat:no-repeat;
+    font-family:courier,monospace;
+    font-size:9pt;
+}
+.ContactNet {
+    padding-left:25px;
+    background:url(computer.png);
+    background-repeat:no-repeat;
+    font-family:courier,monospace;
+    font-size:9pt;
+}
+.ContactNotes {
+    padding-left:25px;
+    color:#666;
+    font-style:italic;
+    background:url(notes.png);
+    background-repeat:no-repeat;
+    font-family:courier,monospace;
+    font-size:8pt;
+}
+.Contact {
+    background:url(card.jpg);
+    font-size:12px;
+    height:257px;
+    width:362px;
+    padding:25px 20px 35px 20px;
+}
+.Contact a {
+    font-family:courier,monospace;
+}
+.ContactVcard {
+    padding-left:25px;
+    background:url(vcard.png);
+    background-repeat:no-repeat;
+}
+.ContactVcard a {
+    font-family:sans-serif;
+}
+table.importForm {
+    border:1px solid #999;
+    border-collapse:collapse;
+}
+table.importForm td {
+    border:1px solid #999;
+    padding:4px;
+}
+table.ContactAccess th {
+    padding-top:10px;
+}
+table.ContactAccess td {
+    padding-right:10px;
+}

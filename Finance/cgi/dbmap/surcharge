@@ -1,0 +1,27 @@
+column	datatype	size	label	display	read	write	search	validate
+surcharge_id	key#	0	ID	no	8	9	no	hard
+name	string	80	Surcharge	key	5	7	yes	soft
+apply_to	key:acctcode	0	Apply to	brief	5	7	no	yes
+apply_to_gl	string	80	Apply to GL Code	full	5	7	yes	no
+apply_to_objtype	string	80	Apply to object type	full	5	7	yes	no
+apply_to_objid	int	0	Apply to object id	full	5	7	no	yes
+treat_as	key:acctcode	0	Treat as	brief	5	7	no	soft
+percent	decimal	6,3	Percent	brief	5	7	no	yes
+peritem	money	0	Per Item	brief	5	7	no	yes
+perproduct	money	0	Per Product	brief	5	7	no	yes
+persize	money	0	Per Unit Size	brief	5	7	no	yes
+perorder	money	0	Per Order	brief	5	7	no	yes
+provstate	string	80	Prov/State	brief	5	7	yes	yes
+country	string	80	Country	full	5	7	yes	yes
+section_id	key:content	0	Website	brief	8	7	yes	yes
+code	string	80	Coupon Code	brief	5	7	yes	no
+apply_if	key:acctcode	0	Apply if they bought	full	5	7	yes	yes
+apply_if_gl	string	80	Apply if they bought GL Code	full	5	7	yes	no
+apply_if_objtype	string	80	Apply if they bought object type	full	5	7	yes	no
+apply_if_objid	int	0	Apply if they bought object id	full	5	7	no	yes
+min_quantity	int	0	Minimum quantity	full	5	7	no	yes
+min_value	money	0	Minimum value	full	5	7	no	yes
+min_size	decimal	8,2	Minimum size	full	5	7	no	yes
+valid_from	datetime:picker	0	Valid From	brief	5	7	no	yes
+valid_to	datetime:picker	0	Valid Until	brief	5	7	no	yes
+status	list:surcharge_status	80	Status	brief	5	7	no	yes
